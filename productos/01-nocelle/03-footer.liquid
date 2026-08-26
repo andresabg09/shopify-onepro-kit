@@ -1,0 +1,186 @@
+{%- comment -%}
+================================================================
+  BLOQUE 3 / 3  ·  PIE DE PÁGINA
+  Pegar en: Editor de temas → Pie de página → Añadir sección → Custom Liquid
+  Requiere el bloque 01-header (define los tokens).
+
+  Recomendación: ocultar el footer nativo del tema para no duplicar.
+  Editor de temas → Pie de página → ocultar las secciones que trae el tema.
+================================================================
+{%- endcomment -%}
+
+{%- comment -%} ══════════ ZONA EDITABLE ══════════ {%- endcomment -%}
+
+{%- assign LANG = 'es' -%}
+
+{%- assign BRAND = 'MARCA' -%}
+{%- assign BRAND_LINE_ES = 'Una frase corta sobre por qué existe la marca.' -%}
+{%- assign BRAND_LINE_EN = 'One short line about why the brand exists.' -%}
+
+{%- assign EMAIL = 'hola@marca.com' -%}
+{%- assign WHATSAPP = '' -%}
+{%- assign LEGAL_NAME = 'Nombre legal · Panamá' -%}
+
+{%- comment -%} Enlaces: Texto::/ruta  separados por | {%- endcomment -%}
+{%- assign LINKS_HELP_ES = 'Envíos y entregas::/policies/shipping-policy|Devoluciones::/policies/refund-policy|Contacto::/pages/contacto|Seguimiento de pedido::/pages/seguimiento' -%}
+{%- assign LINKS_HELP_EN = 'Shipping::/policies/shipping-policy|Returns::/policies/refund-policy|Contact::/pages/contact|Track your order::/pages/tracking' -%}
+{%- assign LINKS_LEGAL_ES = 'Términos del servicio::/policies/terms-of-service|Privacidad::/policies/privacy-policy|Aviso legal::/pages/aviso-legal' -%}
+{%- assign LINKS_LEGAL_EN = 'Terms of service::/policies/terms-of-service|Privacy::/policies/privacy-policy|Legal notice::/pages/legal' -%}
+
+{%- comment -%} Newsletter {%- endcomment -%}
+{%- assign NEWS_TITLE_ES = 'Novedades, sin ruido' -%}
+{%- assign NEWS_TITLE_EN = 'Updates, no noise' -%}
+{%- assign NEWS_BODY_ES = 'Un correo al mes como mucho. Puedes darte de baja cuando quieras.' -%}
+{%- assign NEWS_BODY_EN = 'One email a month at most. Unsubscribe whenever you like.' -%}
+
+{%- comment -%}
+  Disclaimer legal. OBLIGATORIO en productos de bienestar/belleza.
+  Ver docs/05-claims-y-legal.md
+{%- endcomment -%}
+{%- assign DISCLAIMER_ES = 'Este producto es un dispositivo de bienestar y cuidado personal. No es un producto sanitario y no está destinado a diagnosticar, tratar, curar ni prevenir ninguna enfermedad. Los resultados varían según la persona. Consulta a un profesional de la salud si tienes una afección ocular o cutánea.' -%}
+{%- assign DISCLAIMER_EN = 'This product is a personal wellness device. It is not a medical device and is not intended to diagnose, treat, cure or prevent any disease. Results vary from person to person. Consult a healthcare professional if you have an eye or skin condition.' -%}
+
+{%- comment -%} ══════════ NO EDITAR DEBAJO ══════════ {%- endcomment -%}
+
+{%- if LANG == 'en' -%}
+  {%- assign BRAND_LINE = BRAND_LINE_EN -%}
+  {%- assign LINKS_HELP = LINKS_HELP_EN -%}{%- assign LINKS_LEGAL = LINKS_LEGAL_EN -%}
+  {%- assign NEWS_TITLE = NEWS_TITLE_EN -%}{%- assign NEWS_BODY = NEWS_BODY_EN -%}
+  {%- assign DISCLAIMER = DISCLAIMER_EN -%}
+  {%- assign H_HELP = 'Help' -%}{%- assign H_LEGAL = 'Legal' -%}
+  {%- assign NEWS_PH = 'Your email' -%}{%- assign NEWS_BTN = 'Subscribe' -%}
+  {%- assign NEWS_OK = 'Thanks for subscribing.' -%}
+  {%- assign RIGHTS = 'All rights reserved.' -%}
+{%- else -%}
+  {%- assign BRAND_LINE = BRAND_LINE_ES -%}
+  {%- assign LINKS_HELP = LINKS_HELP_ES -%}{%- assign LINKS_LEGAL = LINKS_LEGAL_ES -%}
+  {%- assign NEWS_TITLE = NEWS_TITLE_ES -%}{%- assign NEWS_BODY = NEWS_BODY_ES -%}
+  {%- assign DISCLAIMER = DISCLAIMER_ES -%}
+  {%- assign H_HELP = 'Ayuda' -%}{%- assign H_LEGAL = 'Legal' -%}
+  {%- assign NEWS_PH = 'Tu correo' -%}{%- assign NEWS_BTN = 'Suscribirme' -%}
+  {%- assign NEWS_OK = 'Gracias por suscribirte.' -%}
+  {%- assign RIGHTS = 'Todos los derechos reservados.' -%}
+{%- endif -%}
+
+<style>
+.op-foot{ background:var(--op-ink); color:var(--op-paper); padding-block:var(--op-s-24) var(--op-s-8); }
+.op-foot a{ color:inherit; text-decoration:none; transition:opacity .2s var(--op-ease); }
+.op-foot a:hover{ opacity:.6; text-decoration:underline; text-underline-offset:.25em; }
+
+.op-foot__top{
+  display:grid; gap:var(--op-s-12); padding-bottom:var(--op-s-16);
+  border-bottom:1px solid rgba(250,248,245,.14);
+}
+@media (min-width:820px){ .op-foot__top{ grid-template-columns:1.4fr .8fr .8fr 1.2fr; gap:var(--op-s-8); } }
+
+.op-foot__brand{
+  font-family:var(--op-font-display); font-size:var(--op-t-xl);
+  font-weight:300; letter-spacing:.02em; margin:0 0 var(--op-s-3);
+}
+.op-foot__line{ font-size:var(--op-t-sm); line-height:1.6; color:rgba(250,248,245,.6); margin:0 0 var(--op-s-4); max-width:30ch; }
+.op-foot__contact{ font-size:var(--op-t-sm); color:rgba(250,248,245,.85); }
+
+.op-foot__h{
+  font-size:var(--op-t-xs); letter-spacing:.14em; text-transform:uppercase;
+  font-weight:500; color:rgba(250,248,245,.45); margin:0 0 var(--op-s-4);
+}
+.op-foot__list{ list-style:none; margin:0; padding:0; display:grid; gap:var(--op-s-3); }
+.op-foot__list a{ font-size:var(--op-t-sm); color:rgba(250,248,245,.85); }
+
+.op-news p{ font-size:var(--op-t-sm); line-height:1.6; color:rgba(250,248,245,.6); margin:0 0 var(--op-s-4); }
+.op-news__row{ display:flex; border-bottom:1px solid rgba(250,248,245,.3); }
+.op-news__row input{
+  flex:1; background:transparent; border:0; outline:0; color:var(--op-paper);
+  font-family:var(--op-font-body); font-size:var(--op-t-sm); padding:.75rem 0;
+}
+.op-news__row input::placeholder{ color:rgba(250,248,245,.4); }
+.op-news__row button{
+  background:transparent; border:0; cursor:pointer; color:var(--op-paper);
+  font-family:var(--op-font-body); font-size:var(--op-t-xs);
+  letter-spacing:.12em; text-transform:uppercase; padding:.75rem 0 .75rem 1rem;
+}
+.op-news__row button:hover{ opacity:.6; }
+.op-news__ok{ font-size:var(--op-t-sm); color:var(--op-paper); margin-top:var(--op-s-3); }
+
+.op-foot__pay{ display:flex; flex-wrap:wrap; gap:var(--op-s-3); align-items:center; margin-block:var(--op-s-8); }
+.op-foot__pay svg{ height:1.5rem; width:auto; opacity:.55; }
+
+.op-foot__disc{
+  font-size:var(--op-t-xs); line-height:1.7; color:rgba(250,248,245,.42);
+  max-width:70ch; margin:0 0 var(--op-s-6);
+}
+.op-foot__bottom{
+  display:flex; flex-wrap:wrap; gap:var(--op-s-3) var(--op-s-6);
+  justify-content:space-between;
+  font-size:var(--op-t-xs); color:rgba(250,248,245,.42);
+}
+</style>
+
+<footer class="op-foot">
+  <div class="op-wrap">
+
+    <div class="op-foot__top">
+      <div>
+        <p class="op-foot__brand">{{ BRAND }}</p>
+        <p class="op-foot__line">{{ BRAND_LINE }}</p>
+        <p class="op-foot__contact">
+          <a href="mailto:{{ EMAIL }}">{{ EMAIL }}</a>
+          {%- if WHATSAPP != blank %}<br><a href="https://wa.me/{{ WHATSAPP }}">WhatsApp</a>{% endif -%}
+        </p>
+      </div>
+
+      <div>
+        <p class="op-foot__h">{{ H_HELP }}</p>
+        <ul class="op-foot__list">
+          {%- assign help_items = LINKS_HELP | split: '|' -%}
+          {%- for item in help_items -%}
+            {%- assign parts = item | split: '::' -%}
+            <li><a href="{{ parts[1] }}">{{ parts[0] }}</a></li>
+          {%- endfor -%}
+        </ul>
+      </div>
+
+      <div>
+        <p class="op-foot__h">{{ H_LEGAL }}</p>
+        <ul class="op-foot__list">
+          {%- assign legal_items = LINKS_LEGAL | split: '|' -%}
+          {%- for item in legal_items -%}
+            {%- assign parts = item | split: '::' -%}
+            <li><a href="{{ parts[1] }}">{{ parts[0] }}</a></li>
+          {%- endfor -%}
+        </ul>
+      </div>
+
+      <div class="op-news">
+        <p class="op-foot__h">{{ NEWS_TITLE }}</p>
+        <p>{{ NEWS_BODY }}</p>
+        {%- form 'customer' -%}
+          <input type="hidden" name="contact[tags]" value="newsletter">
+          {%- if form.posted_successfully? -%}
+            <p class="op-news__ok">{{ NEWS_OK }}</p>
+          {%- else -%}
+            <div class="op-news__row">
+              <input type="email" name="contact[email]" placeholder="{{ NEWS_PH }}"
+                     aria-label="{{ NEWS_PH }}" required>
+              <button type="submit">{{ NEWS_BTN }}</button>
+            </div>
+          {%- endif -%}
+        {%- endform -%}
+      </div>
+    </div>
+
+    <div class="op-foot__pay">
+      {%- for type in shop.enabled_payment_types -%}
+        {{ type | payment_type_svg_tag: class: 'op-pay-icon' }}
+      {%- endfor -%}
+    </div>
+
+    <p class="op-foot__disc">{{ DISCLAIMER }}</p>
+
+    <div class="op-foot__bottom">
+      <span>&copy; {{ 'now' | date: '%Y' }} {{ BRAND }}. {{ RIGHTS }}</span>
+      <span>{{ LEGAL_NAME }}</span>
+    </div>
+
+  </div>
+</footer>
