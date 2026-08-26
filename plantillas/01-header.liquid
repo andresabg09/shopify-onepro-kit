@@ -1,0 +1,157 @@
+{%- comment -%}
+================================================================
+  BLOQUE 1 / 3  ·  ENCABEZADO
+  Pegar en: Editor de temas → Encabezado → Añadir sección → Custom Liquid
+  PEGAR ESTE PRIMERO. Define los tokens que usan los otros dos bloques.
+================================================================
+{%- endcomment -%}
+
+{%- comment -%} ══════════ ZONA EDITABLE ══════════ {%- endcomment -%}
+
+{%- assign LANG = 'es' -%}
+
+{%- assign BRAND = 'MARCA' -%}
+{%- assign BRAND_TAGLINE_ES = 'Bienestar diario, bien diseñado' -%}
+{%- assign BRAND_TAGLINE_EN = 'Everyday wellness, well designed' -%}
+
+{%- comment -%} Barra de anuncio: 3 mensajes que rotan {%- endcomment -%}
+{%- assign BAR_1_ES = 'Envío gratis a todo el país' -%}
+{%- assign BAR_1_EN = 'Free shipping nationwide' -%}
+{%- assign BAR_2_ES = 'Garantía de 30 días o te devolvemos el dinero' -%}
+{%- assign BAR_2_EN = '30-day money-back guarantee' -%}
+{%- assign BAR_3_ES = 'Stock limitado de la primera producción' -%}
+{%- assign BAR_3_EN = 'Limited first production run' -%}
+
+{%- comment -%} Paleta. Un solo acento por tienda. {%- endcomment -%}
+{%- assign ACCENT     = '#2F4F4A' -%}
+{%- assign ACCENT_INK = '#FFFFFF' -%}
+{%- assign INK        = '#14100E' -%}
+{%- assign PAPER      = '#FAF8F5' -%}
+
+{%- comment -%} Tipografía (Google Fonts) {%- endcomment -%}
+{%- assign FONT_DISPLAY = 'Fraunces' -%}
+{%- assign FONT_BODY    = 'Inter' -%}
+
+{%- comment -%} ══════════ NO EDITAR DEBAJO ══════════ {%- endcomment -%}
+
+{%- if LANG == 'en' -%}
+  {%- assign TAGLINE = BRAND_TAGLINE_EN -%}
+  {%- assign BAR_1 = BAR_1_EN -%}{%- assign BAR_2 = BAR_2_EN -%}{%- assign BAR_3 = BAR_3_EN -%}
+{%- else -%}
+  {%- assign TAGLINE = BRAND_TAGLINE_ES -%}
+  {%- assign BAR_1 = BAR_1_ES -%}{%- assign BAR_2 = BAR_2_ES -%}{%- assign BAR_3 = BAR_3_ES -%}
+{%- endif -%}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family={{ FONT_DISPLAY }}:opsz,wght@9..144,300..700&family={{ FONT_BODY }}:wght@300..600&display=swap">
+
+<style>
+:root{
+  --op-ink:{{ INK }};
+  --op-paper:{{ PAPER }};
+  --op-surface:#FFFFFF;
+  --op-muted:#6B635C;
+  --op-line:#E7E1D9;
+  --op-accent:{{ ACCENT }};
+  --op-accent-ink:{{ ACCENT_INK }};
+  --op-accent-wash:color-mix(in srgb, {{ ACCENT }} 7%, {{ PAPER }});
+
+  --op-font-display:'{{ FONT_DISPLAY }}', 'Iowan Old Style', Georgia, serif;
+  --op-font-body:'{{ FONT_BODY }}', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Escala tipográfica fluida */
+  --op-t-xs:0.75rem;
+  --op-t-sm:0.875rem;
+  --op-t-base:clamp(1rem, 0.97rem + 0.15vw, 1.0625rem);
+  --op-t-lg:clamp(1.125rem, 1.05rem + 0.35vw, 1.3125rem);
+  --op-t-xl:clamp(1.5rem, 1.3rem + 1vw, 2rem);
+  --op-t-2xl:clamp(2rem, 1.6rem + 2vw, 3rem);
+  --op-t-3xl:clamp(2.5rem, 1.9rem + 3vw, 4.25rem);
+
+  /* Ritmo vertical: escala de 4px */
+  --op-s-1:0.25rem;  --op-s-2:0.5rem;   --op-s-3:0.75rem;
+  --op-s-4:1rem;     --op-s-6:1.5rem;   --op-s-8:2rem;
+  --op-s-12:3rem;    --op-s-16:4rem;    --op-s-24:6rem;
+  --op-section:clamp(3.5rem, 2rem + 6vw, 7rem);
+
+  --op-max:1180px;
+  --op-max-text:62ch;
+  --op-radius:2px;
+  --op-radius-lg:4px;
+  --op-ease:cubic-bezier(.2,.7,.3,1);
+}
+
+/* Base */
+.op-scope, .op-bar, .op-foot{
+  font-family:var(--op-font-body);
+  color:var(--op-ink);
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+body{ background:var(--op-paper); }
+
+.op-wrap{ width:100%; max-width:var(--op-max); margin-inline:auto; padding-inline:clamp(1.25rem,5vw,2.5rem); }
+
+/* ── Barra de anuncio ─────────────────────────────── */
+.op-bar{
+  background:var(--op-ink); color:var(--op-paper);
+  font-size:var(--op-t-xs); letter-spacing:.09em; text-transform:uppercase;
+  font-weight:500;
+}
+.op-bar__viewport{ height:2.5rem; overflow:hidden; position:relative; }
+.op-bar__track{ position:absolute; inset:0; animation:op-bar-cycle 15s infinite; }
+.op-bar__item{
+  height:2.5rem; display:flex; align-items:center; justify-content:center;
+  text-align:center; padding-inline:1rem;
+}
+@keyframes op-bar-cycle{
+  0%,28%   { transform:translateY(0); }
+  33%,61%  { transform:translateY(-2.5rem); }
+  66%,94%  { transform:translateY(-5rem); }
+  100%     { transform:translateY(-7.5rem); }
+}
+@media (prefers-reduced-motion:reduce){
+  .op-bar__track{ animation:none; }
+}
+
+/* ── Re-estilado del header nativo del tema ───────── */
+/* No se reemplaza: el carrito y el menú del tema deben seguir vivos. */
+.shopify-section-group-header-group,
+.section-header, #shopify-section-header{
+  background:var(--op-paper) !important;
+  border-bottom:1px solid var(--op-line);
+}
+.shopify-section-group-header-group .header__heading-link,
+.shopify-section-group-header-group .header__heading,
+.header__heading-link{
+  font-family:var(--op-font-display) !important;
+  font-weight:400 !important;
+  letter-spacing:.02em;
+  text-transform:none !important;
+}
+.shopify-section-group-header-group .header__menu-item,
+.shopify-section-group-header-group .list-menu__item{
+  font-family:var(--op-font-body) !important;
+  font-size:var(--op-t-sm) !important;
+  letter-spacing:.06em; text-transform:uppercase;
+  font-weight:500; color:var(--op-ink) !important;
+}
+.shopify-section-group-header-group .header__menu-item:hover{ color:var(--op-accent) !important; }
+
+/* Silencia decoraciones del tema que rompen el aire */
+.shopify-section-group-header-group .header__icon--cart .cart-count-bubble{
+  background:var(--op-accent) !important; color:var(--op-accent-ink) !important;
+}
+</style>
+
+<div class="op-bar" role="region" aria-label="{{ TAGLINE }}">
+  <div class="op-bar__viewport">
+    <div class="op-bar__track">
+      <div class="op-bar__item">{{ BAR_1 }}</div>
+      <div class="op-bar__item">{{ BAR_2 }}</div>
+      <div class="op-bar__item">{{ BAR_3 }}</div>
+      <div class="op-bar__item">{{ BAR_1 }}</div>
+    </div>
+  </div>
+</div>

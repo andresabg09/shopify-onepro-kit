@@ -1,0 +1,529 @@
+{%- comment -%}
+================================================================
+  BLOQUE 2 / 3  ·  PLANTILLA (la landing completa)
+  Pegar en: Editor de temas → Plantilla → Añadir sección → Custom Liquid
+  Requiere que el bloque 01-header ya esté pegado (define los tokens).
+
+  Funciona en la página de producto y en la home:
+  - En producto usa el objeto {{ product }} automáticamente.
+  - En home usa PRODUCT_HANDLE.
+
+  FORMATO DE LAS LISTAS
+  - Elementos separados por  |
+  - Título y descripción separados por  ::
+================================================================
+{%- endcomment -%}
+
+{%- comment -%} ========== ZONA EDITABLE ========== {%- endcomment -%}
+
+{%- assign LANG = 'es' -%}
+{%- assign PRODUCT_HANDLE = 'handle-del-producto' -%}
+
+{%- comment -%} -- HERO -- {%- endcomment -%}
+{%- assign EYEBROW_ES = 'Diseñado para el descanso' -%}
+{%- assign EYEBROW_EN = 'Designed for rest' -%}
+{%- assign H1_ES = 'El titular que promete el resultado, no el producto' -%}
+{%- assign H1_EN = 'The headline that promises the result, not the product' -%}
+{%- assign SUB_ES = 'Una frase que explica el mecanismo concreto y elimina la duda principal.' -%}
+{%- assign SUB_EN = 'One line that explains the actual mechanism and removes the main doubt.' -%}
+{%- assign CTA_ES = 'Añadir al carrito' -%}
+{%- assign CTA_EN = 'Add to cart' -%}
+{%- assign MICRO_ES = 'Envío gratis · 30 días de garantía · Stock limitado' -%}
+{%- assign MICRO_EN = 'Free shipping · 30-day guarantee · Limited stock' -%}
+
+{%- comment -%} -- TIRA DE CONFIANZA (4) -- {%- endcomment -%}
+{%- assign TRUST_ES = 'Envío gratis|Garantía 30 días|Pago seguro|Soporte real' -%}
+{%- assign TRUST_EN = 'Free shipping|30-day guarantee|Secure checkout|Real support' -%}
+
+{%- comment -%} -- PROBLEMA (3 dolores) -- {%- endcomment -%}
+{%- assign PROB_TITLE_ES = '¿Te reconoces en esto?' -%}
+{%- assign PROB_TITLE_EN = 'Sound familiar?' -%}
+{%- assign PROB_ES = 'Primer dolor concreto del cliente|Segundo dolor, en sus propias palabras|Tercer dolor: lo que ya intentó y no funcionó' -%}
+{%- assign PROB_EN = 'First concrete pain point|Second pain, in their own words|Third: what they already tried that failed' -%}
+
+{%- comment -%} -- CÓMO FUNCIONA (3 pasos) -- {%- endcomment -%}
+{%- assign HOW_TITLE_ES = 'Cómo funciona' -%}
+{%- assign HOW_TITLE_EN = 'How it works' -%}
+{%- assign HOW_ES = 'Paso uno::Qué hace el usuario, en una frase.|Paso dos::El mecanismo real que produce el resultado.|Paso tres::Qué nota y en cuánto tiempo.' -%}
+{%- assign HOW_EN = 'Step one::What the user does, in one line.|Step two::The real mechanism behind the result.|Step three::What they notice, and when.' -%}
+
+{%- comment -%} -- BENEFICIOS (4) -- {%- endcomment -%}
+{%- assign BEN_TITLE_ES = 'Por qué es distinto' -%}
+{%- assign BEN_TITLE_EN = 'Why it is different' -%}
+{%- assign BEN_ES = 'Beneficio uno::Línea de apoyo que lo justifica.|Beneficio dos::Línea de apoyo que lo justifica.|Beneficio tres::Línea de apoyo que lo justifica.|Beneficio cuatro::Línea de apoyo que lo justifica.' -%}
+{%- assign BEN_EN = 'Benefit one::Supporting line that backs it up.|Benefit two::Supporting line that backs it up.|Benefit three::Supporting line that backs it up.|Benefit four::Supporting line that backs it up.' -%}
+
+{%- comment -%} -- ESPECIFICACIONES -- {%- endcomment -%}
+{%- assign SPEC_TITLE_ES = 'Especificaciones' -%}
+{%- assign SPEC_TITLE_EN = 'Specifications' -%}
+{%- assign SPECS = 'Material::-|Dimensiones::-|Peso::-|Batería::-|Incluye::-|Garantía::30 días' -%}
+
+{%- comment -%} -- COMPARATIVA (1 = sí, 0 = no) -- {%- endcomment -%}
+{%- assign CMP_TITLE_ES = 'Comparado con la alternativa' -%}
+{%- assign CMP_TITLE_EN = 'Compared to the alternative' -%}
+{%- assign CMP_US_ES = 'Nosotros' -%}
+{%- assign CMP_US_EN = 'Us' -%}
+{%- assign CMP_THEM_ES = 'Alternativa genérica' -%}
+{%- assign CMP_THEM_EN = 'Generic alternative' -%}
+{%- assign CMP_ROWS = 'Criterio uno::1::0|Criterio dos::1::0|Criterio tres::1::1|Criterio cuatro::1::0' -%}
+
+{%- comment -%} -- TESTIMONIOS -- {%- endcomment -%}
+{%- assign REV_TITLE_ES = 'Lo que dicen' -%}
+{%- assign REV_TITLE_EN = 'What people say' -%}
+{%- assign REV_ES = 'Nombre A::Texto del testimonio, concreto y creíble.|Nombre B::Texto del testimonio, concreto y creíble.|Nombre C::Texto del testimonio, concreto y creíble.' -%}
+{%- assign REV_EN = 'Name A::Concrete, believable testimonial text.|Name B::Concrete, believable testimonial text.|Name C::Concrete, believable testimonial text.' -%}
+
+{%- comment -%} -- GARANTÍA -- {%- endcomment -%}
+{%- assign GUA_TITLE_ES = '30 días para probarlo' -%}
+{%- assign GUA_TITLE_EN = '30 days to try it' -%}
+{%- assign GUA_BODY_ES = 'Si no notas la diferencia, escríbenos y te devolvemos el importe completo. Sin formularios ni preguntas incómodas.' -%}
+{%- assign GUA_BODY_EN = 'If you do not notice a difference, write to us and we refund you in full. No forms, no awkward questions.' -%}
+
+{%- comment -%} -- FAQ -- {%- endcomment -%}
+{%- assign FAQ_TITLE_ES = 'Preguntas frecuentes' -%}
+{%- assign FAQ_TITLE_EN = 'Frequently asked questions' -%}
+{%- assign FAQ_ES = '¿Cuánto tarda el envío?::Entre X y Y días hábiles. Recibes seguimiento por email.|¿Y si no me funciona?::Tienes 30 días para devolverlo con reembolso completo.|¿Es seguro?::Sí — explicar por qué, con el dato concreto.|¿Cómo se usa?::En una frase, sin tecnicismos.|¿Necesita mantenimiento?::Respuesta breve y honesta.|¿Tiene garantía?::Sí, 30 días desde la entrega.' -%}
+{%- assign FAQ_EN = 'How long is shipping?::Between X and Y business days, with email tracking.|What if it does not work for me?::You have 30 days for a full refund.|Is it safe?::Yes — explain why, with the concrete fact.|How do I use it?::In one line, no jargon.|Does it need maintenance?::Short, honest answer.|Is there a warranty?::Yes, 30 days from delivery.' -%}
+
+{%- comment -%} -- CTA FINAL -- {%- endcomment -%}
+{%- assign FIN_TITLE_ES = 'Empieza esta noche' -%}
+{%- assign FIN_TITLE_EN = 'Start tonight' -%}
+
+{%- comment -%} ========== NO EDITAR DEBAJO ========== {%- endcomment -%}
+
+{%- if product != blank and product.id -%}
+  {%- assign p = product -%}
+{%- else -%}
+  {%- assign p = all_products[PRODUCT_HANDLE] -%}
+{%- endif -%}
+
+{%- if LANG == 'en' -%}
+  {%- assign EYEBROW = EYEBROW_EN -%}{%- assign H1 = H1_EN -%}{%- assign SUB = SUB_EN -%}
+  {%- assign CTA = CTA_EN -%}{%- assign MICRO = MICRO_EN -%}{%- assign TRUST = TRUST_EN -%}
+  {%- assign PROB_TITLE = PROB_TITLE_EN -%}{%- assign PROB = PROB_EN -%}
+  {%- assign HOW_TITLE = HOW_TITLE_EN -%}{%- assign HOW = HOW_EN -%}
+  {%- assign BEN_TITLE = BEN_TITLE_EN -%}{%- assign BEN = BEN_EN -%}
+  {%- assign SPEC_TITLE = SPEC_TITLE_EN -%}
+  {%- assign CMP_TITLE = CMP_TITLE_EN -%}{%- assign CMP_US = CMP_US_EN -%}{%- assign CMP_THEM = CMP_THEM_EN -%}
+  {%- assign REV_TITLE = REV_TITLE_EN -%}{%- assign REV = REV_EN -%}
+  {%- assign GUA_TITLE = GUA_TITLE_EN -%}{%- assign GUA_BODY = GUA_BODY_EN -%}
+  {%- assign FAQ_TITLE = FAQ_TITLE_EN -%}{%- assign FAQ = FAQ_EN -%}
+  {%- assign FIN_TITLE = FIN_TITLE_EN -%}
+  {%- assign SOLD_OUT = 'Sold out' -%}
+{%- else -%}
+  {%- assign EYEBROW = EYEBROW_ES -%}{%- assign H1 = H1_ES -%}{%- assign SUB = SUB_ES -%}
+  {%- assign CTA = CTA_ES -%}{%- assign MICRO = MICRO_ES -%}{%- assign TRUST = TRUST_ES -%}
+  {%- assign PROB_TITLE = PROB_TITLE_ES -%}{%- assign PROB = PROB_ES -%}
+  {%- assign HOW_TITLE = HOW_TITLE_ES -%}{%- assign HOW = HOW_ES -%}
+  {%- assign BEN_TITLE = BEN_TITLE_ES -%}{%- assign BEN = BEN_ES -%}
+  {%- assign SPEC_TITLE = SPEC_TITLE_ES -%}
+  {%- assign CMP_TITLE = CMP_TITLE_ES -%}{%- assign CMP_US = CMP_US_ES -%}{%- assign CMP_THEM = CMP_THEM_ES -%}
+  {%- assign REV_TITLE = REV_TITLE_ES -%}{%- assign REV = REV_ES -%}
+  {%- assign GUA_TITLE = GUA_TITLE_ES -%}{%- assign GUA_BODY = GUA_BODY_ES -%}
+  {%- assign FAQ_TITLE = FAQ_TITLE_ES -%}{%- assign FAQ = FAQ_ES -%}
+  {%- assign FIN_TITLE = FIN_TITLE_ES -%}
+  {%- assign SOLD_OUT = 'Agotado' -%}
+{%- endif -%}
+
+<style>
+.op-scope{ background:var(--op-paper); }
+.op-scope *,.op-scope *::before,.op-scope *::after{ box-sizing:border-box; }
+.op-scope img{ max-width:100%; height:auto; display:block; }
+
+.op-sec{ padding-block:var(--op-section); }
+.op-sec--tight{ padding-block:calc(var(--op-section) * .6); }
+.op-sec--wash{ background:var(--op-accent-wash); }
+.op-sec--ink{ background:var(--op-ink); color:var(--op-paper); }
+
+.op-eyebrow{
+  font-size:var(--op-t-xs); letter-spacing:.16em; text-transform:uppercase;
+  font-weight:500; color:var(--op-accent); margin:0 0 var(--op-s-4);
+}
+.op-h1{
+  font-family:var(--op-font-display); font-size:var(--op-t-3xl);
+  font-weight:300; line-height:1.05; letter-spacing:-.02em;
+  margin:0 0 var(--op-s-6); text-wrap:balance;
+}
+.op-h2{
+  font-family:var(--op-font-display); font-size:var(--op-t-2xl);
+  font-weight:300; line-height:1.12; letter-spacing:-.015em;
+  margin:0 0 var(--op-s-4); text-wrap:balance;
+}
+.op-h3{
+  font-family:var(--op-font-display); font-size:var(--op-t-lg);
+  font-weight:400; line-height:1.25; margin:0 0 var(--op-s-2);
+}
+.op-lead{
+  font-size:var(--op-t-lg); line-height:1.55; color:var(--op-muted);
+  max-width:var(--op-max-text); margin:0 0 var(--op-s-8);
+}
+.op-p{ font-size:var(--op-t-base); line-height:1.65; color:var(--op-muted); margin:0; }
+.op-center{ text-align:center; }
+.op-center .op-lead{ margin-inline:auto; }
+
+.op-head{ max-width:46rem; margin:0 auto var(--op-s-16); text-align:center; }
+.op-head .op-lead{ margin-bottom:0; }
+
+/* -- Hero -- */
+.op-hero{ display:grid; gap:clamp(2rem,5vw,4.5rem); align-items:center; padding-block:var(--op-section); }
+@media (min-width:900px){ .op-hero{ grid-template-columns:1fr 1fr; } }
+.op-hero__media{ position:relative; }
+.op-hero__media img{ width:100%; border-radius:var(--op-radius-lg); }
+.op-hero__ph{
+  aspect-ratio:4/5; background:var(--op-accent-wash);
+  border:1px solid var(--op-line); border-radius:var(--op-radius-lg);
+  display:flex; align-items:center; justify-content:center;
+  color:var(--op-muted); font-size:var(--op-t-sm); letter-spacing:.08em; text-transform:uppercase;
+}
+
+/* -- Precio + compra -- */
+.op-price{ display:flex; align-items:baseline; gap:var(--op-s-3); margin-bottom:var(--op-s-6); }
+.op-price__now{ font-family:var(--op-font-display); font-size:var(--op-t-xl); font-weight:400; }
+.op-price__was{ font-size:var(--op-t-base); color:var(--op-muted); text-decoration:line-through; }
+.op-price__save{
+  font-size:var(--op-t-xs); letter-spacing:.08em; text-transform:uppercase;
+  background:var(--op-accent); color:var(--op-accent-ink);
+  padding:.25rem .5rem; border-radius:var(--op-radius);
+}
+
+.op-btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
+  width:100%; padding:1.0625rem 2rem; border:0; cursor:pointer;
+  background:var(--op-ink); color:var(--op-paper);
+  font-family:var(--op-font-body); font-size:var(--op-t-sm); font-weight:500;
+  letter-spacing:.1em; text-transform:uppercase;
+  border-radius:var(--op-radius); text-decoration:none;
+  transition:background .25s var(--op-ease), transform .25s var(--op-ease);
+}
+.op-btn:hover{ background:var(--op-accent); transform:translateY(-1px); }
+.op-btn:disabled{ background:var(--op-muted); cursor:not-allowed; transform:none; }
+.op-btn--ghost{
+  background:transparent; color:var(--op-ink); border:1px solid var(--op-ink);
+}
+.op-btn--ghost:hover{ background:var(--op-ink); color:var(--op-paper); }
+.op-micro{
+  margin:var(--op-s-3) 0 0; text-align:center;
+  font-size:var(--op-t-xs); color:var(--op-muted); letter-spacing:.04em;
+}
+
+/* -- Tira de confianza -- */
+.op-trust{ border-block:1px solid var(--op-line); }
+.op-trust__grid{
+  display:grid; grid-template-columns:repeat(2,1fr);
+  gap:1px; background:var(--op-line);
+}
+@media (min-width:760px){ .op-trust__grid{ grid-template-columns:repeat(4,1fr); } }
+.op-trust__item{
+  background:var(--op-paper); padding:var(--op-s-6) var(--op-s-4);
+  text-align:center; font-size:var(--op-t-xs);
+  letter-spacing:.1em; text-transform:uppercase; color:var(--op-muted);
+}
+
+/* -- Rejillas -- */
+.op-grid{ display:grid; gap:var(--op-s-8); }
+.op-grid--3{ grid-template-columns:1fr; }
+.op-grid--4{ grid-template-columns:1fr; }
+@media (min-width:700px){ .op-grid--4{ grid-template-columns:repeat(2,1fr); } }
+@media (min-width:900px){
+  .op-grid--3{ grid-template-columns:repeat(3,1fr); }
+  .op-grid--4{ grid-template-columns:repeat(4,1fr); }
+}
+
+.op-card{ }
+.op-card__num{
+  font-family:var(--op-font-display); font-size:var(--op-t-xl);
+  color:var(--op-accent); line-height:1; margin-bottom:var(--op-s-4);
+  display:block;
+}
+.op-card__rule{ width:1.75rem; height:1px; background:var(--op-accent); margin-bottom:var(--op-s-4); }
+
+/* -- Especificaciones -- */
+.op-specs{ max-width:38rem; margin-inline:auto; }
+.op-specs__row{
+  display:flex; justify-content:space-between; gap:var(--op-s-4);
+  padding-block:var(--op-s-4); border-bottom:1px solid var(--op-line);
+  font-size:var(--op-t-base);
+}
+.op-specs__k{ color:var(--op-muted); }
+.op-specs__v{ text-align:right; }
+
+/* -- Comparativa -- */
+.op-cmp{ max-width:44rem; margin-inline:auto; overflow-x:auto; }
+.op-cmp table{ width:100%; border-collapse:collapse; font-size:var(--op-t-base); }
+.op-cmp th,.op-cmp td{ padding:var(--op-s-4); text-align:left; border-bottom:1px solid var(--op-line); }
+.op-cmp th{
+  font-size:var(--op-t-xs); letter-spacing:.1em; text-transform:uppercase;
+  font-weight:500; color:var(--op-muted);
+}
+.op-cmp td:not(:first-child),.op-cmp th:not(:first-child){ text-align:center; width:8rem; }
+.op-cmp thead th:nth-child(2){ color:var(--op-accent); }
+.op-cmp .op-yes{ color:var(--op-accent); font-size:1.125rem; }
+.op-cmp .op-no{ color:var(--op-line); font-size:1.125rem; }
+
+/* -- Testimonios -- */
+.op-quote{ font-family:var(--op-font-display); font-size:var(--op-t-lg); font-weight:300; line-height:1.45; margin:0 0 var(--op-s-4); }
+.op-byline{ font-size:var(--op-t-xs); letter-spacing:.12em; text-transform:uppercase; color:var(--op-muted); }
+
+/* -- Garantía -- */
+.op-gua{ max-width:36rem; margin-inline:auto; text-align:center; }
+
+/* -- FAQ -- */
+.op-faq{ max-width:44rem; margin-inline:auto; }
+.op-faq details{ border-bottom:1px solid var(--op-line); }
+.op-faq summary{
+  cursor:pointer; list-style:none; padding-block:var(--op-s-6);
+  display:flex; justify-content:space-between; align-items:center; gap:var(--op-s-4);
+  font-size:var(--op-t-base); font-weight:500;
+}
+.op-faq summary::-webkit-details-marker{ display:none; }
+.op-faq summary::after{
+  content:'+'; font-size:1.25rem; color:var(--op-accent); flex:none;
+  transition:transform .25s var(--op-ease);
+}
+.op-faq details[open] summary::after{ transform:rotate(45deg); }
+.op-faq__a{ padding-bottom:var(--op-s-6); }
+
+/* -- ATC fija en móvil -- */
+.op-sticky{
+  position:fixed; inset-inline:0; bottom:0; z-index:60;
+  background:var(--op-paper); border-top:1px solid var(--op-line);
+  padding:var(--op-s-3) var(--op-s-4);
+  display:flex; align-items:center; gap:var(--op-s-4);
+  transform:translateY(110%); transition:transform .3s var(--op-ease);
+  padding-bottom:calc(var(--op-s-3) + env(safe-area-inset-bottom));
+}
+.op-sticky.is-on{ transform:translateY(0); }
+.op-sticky__price{ font-family:var(--op-font-display); font-size:var(--op-t-lg); flex:none; }
+.op-sticky form{ flex:1; margin:0; }
+.op-sticky .op-btn{ padding-block:.875rem; }
+@media (min-width:900px){ .op-sticky{ display:none; } }
+</style>
+
+<div class="op-scope">
+
+  <!-- ============ HERO ============ -->
+  <section class="op-wrap op-hero">
+    <div>
+      <p class="op-eyebrow">{{ EYEBROW }}</p>
+      <h1 class="op-h1">{{ H1 }}</h1>
+      <p class="op-lead">{{ SUB }}</p>
+
+      {%- if p != blank -%}
+        <div class="op-price">
+          <span class="op-price__now">{{ p.price | money }}</span>
+          {%- if p.compare_at_price > p.price -%}
+            <span class="op-price__was">{{ p.compare_at_price | money }}</span>
+            {%- assign pct = p.compare_at_price | minus: p.price | times: 100 | divided_by: p.compare_at_price -%}
+            <span class="op-price__save">-{{ pct }}%</span>
+          {%- endif -%}
+        </div>
+
+        <form method="post" action="/cart/add" id="op-atc">
+          <input type="hidden" name="form_type" value="product">
+          <input type="hidden" name="utf8" value="&#10003;">
+          <input type="hidden" name="id" value="{{ p.selected_or_first_available_variant.id }}">
+          <input type="hidden" name="quantity" value="1">
+          <button type="submit" class="op-btn" {% unless p.available %}disabled{% endunless %}>
+            {% if p.available %}{{ CTA }}{% else %}{{ SOLD_OUT }}{% endif %}
+          </button>
+        </form>
+        <p class="op-micro">{{ MICRO }}</p>
+      {%- else -%}
+        <p class="op-p"><strong>Aviso:</strong> no se encuentra el producto
+        <code>{{ PRODUCT_HANDLE }}</code>. Revisa PRODUCT_HANDLE en la zona editable.</p>
+      {%- endif -%}
+    </div>
+
+    <div class="op-hero__media">
+      {%- if p != blank and p.featured_image -%}
+        <img src="{{ p.featured_image | image_url: width: 1200 }}"
+             alt="{{ p.featured_image.alt | escape }}" width="1200" height="1500" loading="eager">
+      {%- else -%}
+        <div class="op-hero__ph">Imagen del producto</div>
+      {%- endif -%}
+    </div>
+  </section>
+
+  <!-- ============ CONFIANZA ============ -->
+  <section class="op-trust">
+    <div class="op-trust__grid">
+      {%- assign trust_items = TRUST | split: '|' -%}
+      {%- for t in trust_items -%}
+        <div class="op-trust__item">{{ t }}</div>
+      {%- endfor -%}
+    </div>
+  </section>
+
+  <!-- ============ PROBLEMA ============ -->
+  <section class="op-sec op-wrap">
+    <div class="op-head"><h2 class="op-h2">{{ PROB_TITLE }}</h2></div>
+    <div class="op-grid op-grid--3">
+      {%- assign prob_items = PROB | split: '|' -%}
+      {%- for item in prob_items -%}
+        <div class="op-card">
+          <div class="op-card__rule"></div>
+          <p class="op-p">{{ item }}</p>
+        </div>
+      {%- endfor -%}
+    </div>
+  </section>
+
+  <!-- ============ CÓMO FUNCIONA ============ -->
+  <section class="op-sec op-sec--wash">
+    <div class="op-wrap">
+      <div class="op-head"><h2 class="op-h2">{{ HOW_TITLE }}</h2></div>
+      <div class="op-grid op-grid--3">
+        {%- assign how_items = HOW | split: '|' -%}
+        {%- for item in how_items -%}
+          {%- assign parts = item | split: '::' -%}
+          <div class="op-card">
+            <span class="op-card__num">{{ forloop.index }}</span>
+            <h3 class="op-h3">{{ parts[0] }}</h3>
+            <p class="op-p">{{ parts[1] }}</p>
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BENEFICIOS ============ -->
+  <section class="op-sec op-wrap">
+    <div class="op-head"><h2 class="op-h2">{{ BEN_TITLE }}</h2></div>
+    <div class="op-grid op-grid--4">
+      {%- assign ben_items = BEN | split: '|' -%}
+      {%- for item in ben_items -%}
+        {%- assign parts = item | split: '::' -%}
+        <div class="op-card">
+          <div class="op-card__rule"></div>
+          <h3 class="op-h3">{{ parts[0] }}</h3>
+          <p class="op-p">{{ parts[1] }}</p>
+        </div>
+      {%- endfor -%}
+    </div>
+  </section>
+
+  <!-- ============ ESPECIFICACIONES ============ -->
+  <section class="op-sec op-sec--tight op-wrap">
+    <div class="op-head"><h2 class="op-h2">{{ SPEC_TITLE }}</h2></div>
+    <div class="op-specs">
+      {%- assign spec_items = SPECS | split: '|' -%}
+      {%- for item in spec_items -%}
+        {%- assign parts = item | split: '::' -%}
+        <div class="op-specs__row">
+          <span class="op-specs__k">{{ parts[0] }}</span>
+          <span class="op-specs__v">{{ parts[1] }}</span>
+        </div>
+      {%- endfor -%}
+    </div>
+  </section>
+
+  <!-- ============ COMPARATIVA ============ -->
+  <section class="op-sec op-sec--tight op-wrap">
+    <div class="op-head"><h2 class="op-h2">{{ CMP_TITLE }}</h2></div>
+    <div class="op-cmp">
+      <table>
+        <thead>
+          <tr><th></th><th>{{ CMP_US }}</th><th>{{ CMP_THEM }}</th></tr>
+        </thead>
+        <tbody>
+          {%- assign cmp_items = CMP_ROWS | split: '|' -%}
+          {%- for item in cmp_items -%}
+            {%- assign parts = item | split: '::' -%}
+            <tr>
+              <td>{{ parts[0] }}</td>
+              <td>{% if parts[1] == '1' %}<span class="op-yes">&#9679;</span>{% else %}<span class="op-no">&#9675;</span>{% endif %}</td>
+              <td>{% if parts[2] == '1' %}<span class="op-yes">&#9679;</span>{% else %}<span class="op-no">&#9675;</span>{% endif %}</td>
+            </tr>
+          {%- endfor -%}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIOS ============ -->
+  <section class="op-sec op-sec--wash">
+    <div class="op-wrap">
+      <div class="op-head"><h2 class="op-h2">{{ REV_TITLE }}</h2></div>
+      <div class="op-grid op-grid--3">
+        {%- assign rev_items = REV | split: '|' -%}
+        {%- for item in rev_items -%}
+          {%- assign parts = item | split: '::' -%}
+          <figure class="op-card" style="margin:0">
+            <blockquote class="op-quote">&ldquo;{{ parts[1] }}&rdquo;</blockquote>
+            <figcaption class="op-byline">{{ parts[0] }}</figcaption>
+          </figure>
+        {%- endfor -%}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GARANTÍA ============ -->
+  <section class="op-sec op-sec--tight op-wrap">
+    <div class="op-gua">
+      <h2 class="op-h2">{{ GUA_TITLE }}</h2>
+      <p class="op-p">{{ GUA_BODY }}</p>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="op-sec op-wrap">
+    <div class="op-head"><h2 class="op-h2">{{ FAQ_TITLE }}</h2></div>
+    <div class="op-faq">
+      {%- assign faq_items = FAQ | split: '|' -%}
+      {%- for item in faq_items -%}
+        {%- assign parts = item | split: '::' -%}
+        <details{% if forloop.first %} open{% endif %}>
+          <summary>{{ parts[0] }}</summary>
+          <div class="op-faq__a"><p class="op-p">{{ parts[1] }}</p></div>
+        </details>
+      {%- endfor -%}
+    </div>
+  </section>
+
+  <!-- ============ CTA FINAL ============ -->
+  {%- if p != blank -%}
+  <section class="op-sec op-sec--ink">
+    <div class="op-wrap op-center">
+      <h2 class="op-h2">{{ FIN_TITLE }}</h2>
+      <p class="op-lead" style="color:rgba(250,248,245,.7)">{{ SUB }}</p>
+      <form method="post" action="/cart/add" style="max-width:22rem;margin-inline:auto">
+        <input type="hidden" name="form_type" value="product">
+        <input type="hidden" name="utf8" value="&#10003;">
+        <input type="hidden" name="id" value="{{ p.selected_or_first_available_variant.id }}">
+        <input type="hidden" name="quantity" value="1">
+        <button type="submit" class="op-btn" style="background:var(--op-paper);color:var(--op-ink)"
+                {% unless p.available %}disabled{% endunless %}>
+          {% if p.available %}{{ CTA }} &middot; {{ p.price | money }}{% else %}{{ SOLD_OUT }}{% endif %}
+        </button>
+      </form>
+      <p class="op-micro" style="color:rgba(250,248,245,.55)">{{ MICRO }}</p>
+    </div>
+  </section>
+
+  <!-- ============ ATC FIJA MÓVIL ============ -->
+  <div class="op-sticky" id="op-sticky">
+    <span class="op-sticky__price">{{ p.price | money }}</span>
+    <form method="post" action="/cart/add">
+      <input type="hidden" name="form_type" value="product">
+      <input type="hidden" name="utf8" value="&#10003;">
+      <input type="hidden" name="id" value="{{ p.selected_or_first_available_variant.id }}">
+      <input type="hidden" name="quantity" value="1">
+      <button type="submit" class="op-btn" {% unless p.available %}disabled{% endunless %}>
+        {% if p.available %}{{ CTA }}{% else %}{{ SOLD_OUT }}{% endif %}
+      </button>
+    </form>
+  </div>
+  {%- endif -%}
+
+</div>
+
+<script>
+(function(){
+  var bar = document.getElementById('op-sticky');
+  var top = document.getElementById('op-atc');
+  if(!bar || !top || !('IntersectionObserver' in window)) return;
+  new IntersectionObserver(function(entries){
+    bar.classList.toggle('is-on', !entries[0].isIntersecting);
+  }, { rootMargin: '0px 0px -100% 0px' }).observe(top);
+})();
+</script>
