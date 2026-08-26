@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Preview — Nocelle</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=Inter:wght@300..600&display=swap">
+<style>
+:root{
+  --op-ink:#14100E;
+  --op-paper:#FAF8F5;
+  --op-surface:#FFFFFF;
+  --op-muted:#6B635C;
+  --op-line:#E7E1D9;
+  --op-accent:#4A3B47;
+  --op-accent-ink:#FFFFFF;
+  --op-accent-wash:color-mix(in srgb, #4A3B47 7%, #FAF8F5);
+
+  --op-font-display:'Fraunces', 'Iowan Old Style', Georgia, serif;
+  --op-font-body:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --op-t-xs:0.75rem;
+  --op-t-sm:0.875rem;
+  --op-t-base:clamp(1rem, 0.97rem + 0.15vw, 1.0625rem);
+  --op-t-lg:clamp(1.125rem, 1.05rem + 0.35vw, 1.3125rem);
+  --op-t-xl:clamp(1.5rem, 1.3rem + 1vw, 2rem);
+  --op-t-2xl:clamp(2rem, 1.6rem + 2vw, 3rem);
+  --op-t-3xl:clamp(2.5rem, 1.9rem + 3vw, 4.25rem);
+
+  --op-s-1:0.25rem; --op-s-2:0.5rem; --op-s-3:0.75rem;
+  --op-s-4:1rem; --op-s-6:1.5rem; --op-s-8:2rem;
+  --op-s-12:3rem; --op-s-16:4rem; --op-s-24:6rem;
+  --op-section:clamp(3.5rem, 2rem + 6vw, 7rem);
+
+  --op-max:1180px;
+  --op-max-text:62ch;
+  --op-radius:2px;
+  --op-radius-lg:4px;
+  --op-ease:cubic-bezier(.2,.7,.3,1);
+}
+*,*::before,*::after{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+body{
+  background:var(--op-paper); color:var(--op-ink);
+  font-family:var(--op-font-body); -webkit-font-smoothing:antialiased;
+}
+img{ max-width:100%; height:auto; display:block; }
+
+.op-topnote{
+  background:#fff8e6; color:#5c4a12; font-size:.8125rem; text-align:center;
+  padding:.6rem 1rem; border-bottom:1px solid #eadfb8;
+}
+.op-topnote code{ background:rgba(0,0,0,.06); padding:.1em .35em; border-radius:2px; }
+
+.op-wrap{ width:100%; max-width:var(--op-max); margin-inline:auto; padding-inline:clamp(1.25rem,5vw,2.5rem); }
+
+.op-bar{
+  background:var(--op-ink); color:var(--op-paper);
+  font-size:var(--op-t-xs); letter-spacing:.09em; text-transform:uppercase;
+  font-weight:500; height:2.5rem; display:flex; align-items:center; justify-content:center;
+}
+
+.op-header{ background:var(--op-paper); border-bottom:1px solid var(--op-line); }
+.op-header__row{ display:flex; align-items:center; justify-content:space-between; padding-block:1.1rem; }
+.op-header__brand{ font-family:var(--op-font-display); font-size:1.25rem; }
+.op-header__nav{ display:flex; gap:1.5rem; font-size:var(--op-t-sm); letter-spacing:.06em; text-transform:uppercase; color:var(--op-muted); }
+.op-header__nav a{ color:inherit; text-decoration:none; }
+.op-header__cart{ font-size:var(--op-t-sm); letter-spacing:.06em; text-transform:uppercase; }
+@media (max-width:700px){ .op-header__nav{ display:none; } }
+
+.op-sec{ padding-block:var(--op-section); }
+.op-sec--tight{ padding-block:calc(var(--op-section) * .6); }
+.op-sec--wash{ background:var(--op-accent-wash); }
+.op-sec--ink{ background:var(--op-ink); color:var(--op-paper); }
+
+.op-eyebrow{ font-size:var(--op-t-xs); letter-spacing:.16em; text-transform:uppercase; font-weight:500; color:var(--op-accent); margin:0 0 var(--op-s-4); }
+.op-h1{ font-family:var(--op-font-display); font-size:var(--op-t-3xl); font-weight:300; line-height:1.05; letter-spacing:-.02em; margin:0 0 var(--op-s-6); }
+.op-h2{ font-family:var(--op-font-display); font-size:var(--op-t-2xl); font-weight:300; line-height:1.12; letter-spacing:-.015em; margin:0 0 var(--op-s-4); }
+.op-h3{ font-family:var(--op-font-display); font-size:var(--op-t-lg); font-weight:400; line-height:1.25; margin:0 0 var(--op-s-2); }
+.op-lead{ font-size:var(--op-t-lg); line-height:1.55; color:var(--op-muted); max-width:var(--op-max-text); margin:0 0 var(--op-s-8); }
+.op-p{ font-size:var(--op-t-base); line-height:1.65; color:var(--op-muted); margin:0; }
+.op-center{ text-align:center; }
+.op-center .op-lead{ margin-inline:auto; }
+.op-head{ max-width:46rem; margin:0 auto var(--op-s-16); text-align:center; }
+.op-head .op-lead{ margin-bottom:0; }
+
+.op-hero{ display:grid; gap:clamp(2rem,5vw,4.5rem); align-items:center; padding-block:var(--op-section); }
+@media (min-width:900px){ .op-hero{ grid-template-columns:1fr 1fr; } }
+.op-hero__ph{
+  aspect-ratio:4/5; background:var(--op-accent-wash); border:1px solid var(--op-line);
+  border-radius:var(--op-radius-lg); display:flex; align-items:center; justify-content:center;
+  color:var(--op-muted); font-size:var(--op-t-sm); letter-spacing:.08em; text-transform:uppercase;
+}
+
+.op-price{ display:flex; align-items:baseline; gap:var(--op-s-3); margin-bottom:var(--op-s-6); }
+.op-price__now{ font-family:var(--op-font-display); font-size:var(--op-t-xl); font-weight:400; }
+.op-price__was{ font-size:var(--op-t-base); color:var(--op-muted); text-decoration:line-through; }
+.op-price__save{ font-size:var(--op-t-xs); letter-spacing:.08em; text-transform:uppercase; background:var(--op-accent); color:var(--op-accent-ink); padding:.25rem .5rem; border-radius:var(--op-radius); }
+
+.op-btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:.5rem; width:100%;
+  padding:1.0625rem 2rem; border:0; cursor:pointer; background:var(--op-ink); color:var(--op-paper);
+  font-family:var(--op-font-body); font-size:var(--op-t-sm); font-weight:500; letter-spacing:.1em;
+  text-transform:uppercase; border-radius:var(--op-radius); text-decoration:none;
+  transition:background .25s var(--op-ease), transform .25s var(--op-ease);
+}
+.op-btn:hover{ background:var(--op-accent); transform:translateY(-1px); }
+.op-micro{ margin:var(--op-s-3) 0 0; text-align:center; font-size:var(--op-t-xs); color:var(--op-muted); letter-spacing:.04em; }
+
+.op-trust{ border-block:1px solid var(--op-line); }
+.op-trust__grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--op-line); }
+@media (min-width:760px){ .op-trust__grid{ grid-template-columns:repeat(4,1fr); } }
+.op-trust__item{ background:var(--op-paper); padding:var(--op-s-6) var(--op-s-4); text-align:center; font-size:var(--op-t-xs); letter-spacing:.1em; text-transform:uppercase; color:var(--op-muted); }
+
+.op-grid{ display:grid; gap:var(--op-s-8); }
+.op-grid--3{ grid-template-columns:1fr; }
+.op-grid--4{ grid-template-columns:1fr; }
+@media (min-width:700px){ .op-grid--4{ grid-template-columns:repeat(2,1fr); } }
+@media (min-width:900px){ .op-grid--3{ grid-template-columns:repeat(3,1fr); } .op-grid--4{ grid-template-columns:repeat(4,1fr); } }
+
+.op-card__num{ font-family:var(--op-font-display); font-size:var(--op-t-xl); color:var(--op-accent); line-height:1; margin-bottom:var(--op-s-4); display:block; }
+.op-card__rule{ width:1.75rem; height:1px; background:var(--op-accent); margin-bottom:var(--op-s-4); }
+
+.op-specs{ max-width:38rem; margin-inline:auto; }
+.op-specs__row{ display:flex; justify-content:space-between; gap:var(--op-s-4); padding-block:var(--op-s-4); border-bottom:1px solid var(--op-line); font-size:var(--op-t-base); }
+.op-specs__k{ color:var(--op-muted); }
+
+.op-cmp{ max-width:44rem; margin-inline:auto; overflow-x:auto; }
+.op-cmp table{ width:100%; border-collapse:collapse; font-size:var(--op-t-base); }
+.op-cmp th,.op-cmp td{ padding:var(--op-s-4); text-align:left; border-bottom:1px solid var(--op-line); }
+.op-cmp th{ font-size:var(--op-t-xs); letter-spacing:.1em; text-transform:uppercase; font-weight:500; color:var(--op-muted); }
+.op-cmp td:not(:first-child),.op-cmp th:not(:first-child){ text-align:center; width:8rem; }
+.op-cmp thead th:nth-child(2){ color:var(--op-accent); }
+.op-cmp .op-yes{ color:var(--op-accent); font-size:1.125rem; }
+.op-cmp .op-no{ color:var(--op-line); font-size:1.125rem; }
+
+.op-gua{ max-width:36rem; margin-inline:auto; text-align:center; }
+
+.op-faq{ max-width:44rem; margin-inline:auto; }
+.op-faq details{ border-bottom:1px solid var(--op-line); }
+.op-faq summary{ cursor:pointer; list-style:none; padding-block:var(--op-s-6); display:flex; justify-content:space-between; align-items:center; gap:var(--op-s-4); font-size:var(--op-t-base); font-weight:500; }
+.op-faq summary::-webkit-details-marker{ display:none; }
+.op-faq summary::after{ content:'+'; font-size:1.25rem; color:var(--op-accent); flex:none; transition:transform .25s var(--op-ease); }
+.op-faq details[open] summary::after{ transform:rotate(45deg); }
+.op-faq__a{ padding-bottom:var(--op-s-6); }
+
+.op-foot{ background:var(--op-ink); color:var(--op-paper); padding-block:var(--op-s-24) var(--op-s-8); }
+.op-foot a{ color:inherit; text-decoration:none; }
+.op-foot__top{ display:grid; gap:var(--op-s-12); padding-bottom:var(--op-s-16); border-bottom:1px solid rgba(250,248,245,.14); }
+@media (min-width:820px){ .op-foot__top{ grid-template-columns:1.4fr .8fr .8fr 1.2fr; gap:var(--op-s-8); } }
+.op-foot__brand{ font-family:var(--op-font-display); font-size:var(--op-t-xl); font-weight:300; margin:0 0 var(--op-s-3); }
+.op-foot__line{ font-size:var(--op-t-sm); line-height:1.6; color:rgba(250,248,245,.6); margin:0 0 var(--op-s-4); max-width:30ch; }
+.op-foot__h{ font-size:var(--op-t-xs); letter-spacing:.14em; text-transform:uppercase; font-weight:500; color:rgba(250,248,245,.45); margin:0 0 var(--op-s-4); }
+.op-foot__list{ list-style:none; margin:0; padding:0; display:grid; gap:var(--op-s-3); }
+.op-foot__list a{ font-size:var(--op-t-sm); color:rgba(250,248,245,.85); }
+.op-foot__disc{ font-size:var(--op-t-xs); line-height:1.7; color:rgba(250,248,245,.42); max-width:70ch; margin:var(--op-s-8) 0 var(--op-s-6); }
+.op-foot__bottom{ display:flex; flex-wrap:wrap; gap:var(--op-s-3) var(--op-s-6); justify-content:space-between; font-size:var(--op-t-xs); color:rgba(250,248,245,.42); }
+</style>
+</head>
+<body>
+
+<p class="op-topnote">
+  Preview de <strong>Nocelle</strong> con el copy y color reales del brief — imágenes son
+  marcadores de posición hasta elegir las fotos definitivas.
+</p>
+
+<div class="op-bar">Envío gratis · Entrega en 10 días &nbsp;·&nbsp; Garantía de 30 días</div>
+
+<header class="op-header">
+  <div class="op-wrap op-header__row">
+    <div class="op-header__brand">Nocelle</div>
+    <nav class="op-header__nav">
+      <a href="#">Producto</a><a href="#">FAQ</a><a href="#">Contacto</a>
+    </nav>
+    <div class="op-header__cart">Carrito (0)</div>
+  </div>
+</header>
+
+<section class="op-wrap op-hero">
+  <div>
+    <p class="op-eyebrow">Ritual de 15 minutos</p>
+    <h1 class="op-h1">Una mirada descansada, aunque la noche no haya ayudado</h1>
+    <p class="op-lead">Microcorriente y luz roja en tu rutina de siempre, antes de dormir.</p>
+    <div class="op-price">
+      <span class="op-price__now">$59.99</span>
+      <span class="op-price__was">$89.99</span>
+      <span class="op-price__save">-33%</span>
+    </div>
+    <button class="op-btn">Empezar mi ritual</button>
+    <p class="op-micro">Envío gratis · Garantía de 30 días · Certificado CE</p>
+  </div>
+  <div class="op-hero__ph">Foto del producto</div>
+</section>
+
+<section class="op-trust">
+  <div class="op-trust__grid">
+    <div class="op-trust__item">Envío gratis</div>
+    <div class="op-trust__item">Garantía 30 días</div>
+    <div class="op-trust__item">Pago seguro</div>
+    <div class="op-trust__item">Certificado CE</div>
+  </div>
+</section>
+
+<section class="op-sec op-wrap">
+  <div class="op-head"><h2 class="op-h2">¿Te reconoces en esto?</h2></div>
+  <div class="op-grid op-grid--3">
+    <div><div class="op-card__rule"></div><p class="op-p">Te miras al espejo y las ojeras dicen que dormiste mal, aunque hayas dormido bien.</p></div>
+    <div><div class="op-card__rule"></div><p class="op-p">Después de horas de pantalla, sientes los ojos hinchados y cansados.</p></div>
+    <div><div class="op-card__rule"></div><p class="op-p">El corrector las tapa un rato, pero vuelven apenas te lo quitas.</p></div>
+  </div>
+</section>
+
+<section class="op-sec op-sec--wash">
+  <div class="op-wrap">
+    <div class="op-head"><h2 class="op-h2">Cómo funciona</h2></div>
+    <div class="op-grid op-grid--3">
+      <div><span class="op-card__num">1</span><h3 class="op-h3">Colócatelo</h3><p class="op-p">Se ajusta como unos lentes, sin apretar, sobre el contorno de ojos.</p></div>
+      <div><span class="op-card__num">2</span><h3 class="op-h3">Actívalo</h3><p class="op-p">Microcorriente (EMS) y luz roja trabajan la zona durante la sesión.</p></div>
+      <div><span class="op-card__num">3</span><h3 class="op-h3">Sigue tu rutina</h3><p class="op-p">15 minutos con temporizador automático — se apaga solo.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="op-sec op-wrap">
+  <div class="op-head"><h2 class="op-h2">Por qué es distinto</h2></div>
+  <div class="op-grid op-grid--4">
+    <div><div class="op-card__rule"></div><h3 class="op-h3">Se ajusta a ti</h3><p class="op-p">3 niveles de intensidad, según tu sensibilidad.</p></div>
+    <div><div class="op-card__rule"></div><h3 class="op-h3">Carga rápida</h3><p class="op-p">30 minutos de carga, 90 minutos de uso.</p></div>
+    <div><div class="op-card__rule"></div><h3 class="op-h3">Manos libres</h3><p class="op-p">Diseño tipo lentes — sigue tu rutina mientras se usa.</p></div>
+    <div><div class="op-card__rule"></div><h3 class="op-h3">Calidad certificada</h3><p class="op-p">Certificación CE, no un gadget improvisado.</p></div>
+  </div>
+</section>
+
+<section class="op-sec op-sec--tight op-wrap">
+  <div class="op-head"><h2 class="op-h2">Especificaciones</h2></div>
+  <div class="op-specs">
+    <div class="op-specs__row"><span class="op-specs__k">Material</span><span>ABS + silicona</span></div>
+    <div class="op-specs__row"><span class="op-specs__k">Dimensiones</span><span>14 × 15 cm</span></div>
+    <div class="op-specs__row"><span class="op-specs__k">Peso</span><span>38 g</span></div>
+    <div class="op-specs__row"><span class="op-specs__k">Batería</span><span>90 mAh (30 min carga / 90 min uso)</span></div>
+    <div class="op-specs__row"><span class="op-specs__k">Garantía</span><span>30 días</span></div>
+  </div>
+</section>
+
+<section class="op-sec op-sec--tight op-wrap">
+  <div class="op-head"><h2 class="op-h2">Comparado con la alternativa de $8</h2></div>
+  <div class="op-cmp">
+    <table>
+      <thead><tr><th></th><th>Nocelle</th><th>Genérico de $8</th></tr></thead>
+      <tbody>
+        <tr><td>3 niveles de intensidad ajustables</td><td><span class="op-yes">●</span></td><td><span class="op-no">○</span></td></tr>
+        <tr><td>Certificación CE</td><td><span class="op-yes">●</span></td><td><span class="op-no">○</span></td></tr>
+        <tr><td>Garantía de 30 días</td><td><span class="op-yes">●</span></td><td><span class="op-no">○</span></td></tr>
+        <tr><td>Carga por USB-C</td><td><span class="op-yes">●</span></td><td><span class="op-yes">●</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Sección de testimonios OCULTA a propósito: tienda nueva, cero reseñas reales -->
+
+<section class="op-sec op-sec--tight op-wrap">
+  <div class="op-gua">
+    <h2 class="op-h2">30 días para probarlo</h2>
+    <p class="op-p">Si no notas la diferencia, escríbenos y te devolvemos el importe completo. Sin formularios ni preguntas incómodas.</p>
+  </div>
+</section>
+
+<section class="op-sec op-wrap">
+  <div class="op-head"><h2 class="op-h2">Preguntas frecuentes</h2></div>
+  <div class="op-faq">
+    <details open><summary>¿Cuánto tarda el envío?</summary><div class="op-faq__a"><p class="op-p">Alrededor de 10 días hábiles, con seguimiento por email.</p></div></details>
+    <details><summary>¿Y si no me funciona?</summary><div class="op-faq__a"><p class="op-p">Tienes 30 días para devolverlo con reembolso completo.</p></div></details>
+    <details><summary>¿Es seguro para el contorno de ojos?</summary><div class="op-faq__a"><p class="op-p">Sí. Usa microcorriente de bajo voltaje (3.7V) y luz LED, con certificación CE. Evita el contacto directo con el ojo.</p></div></details>
+    <details><summary>¿Cómo se usa?</summary><div class="op-faq__a"><p class="op-p">Colócatelo como unos lentes, elige la intensidad y déjalo actuar 15 minutos — se apaga solo.</p></div></details>
+  </div>
+</section>
+
+<section class="op-sec op-sec--ink">
+  <div class="op-wrap op-center">
+    <h2 class="op-h2">Empieza esta noche</h2>
+    <p class="op-lead" style="color:rgba(250,248,245,.7)">Microcorriente y luz roja en tu rutina de siempre, antes de dormir.</p>
+    <div style="max-width:22rem;margin-inline:auto">
+      <button class="op-btn" style="background:var(--op-paper);color:var(--op-ink)">Empezar mi ritual · $59.99</button>
+    </div>
+    <p class="op-micro" style="color:rgba(250,248,245,.55)">Envío gratis · Garantía de 30 días · Certificado CE</p>
+  </div>
+</section>
+
+<footer class="op-foot">
+  <div class="op-wrap">
+    <div class="op-foot__top">
+      <div>
+        <p class="op-foot__brand">Nocelle</p>
+        <p class="op-foot__line">Un ritual de 15 minutos para una mirada más descansada.</p>
+        <p class="op-p" style="color:rgba(250,248,245,.85)"><a href="#">hola@nocelle.automatepty.com</a></p>
+      </div>
+      <div>
+        <p class="op-foot__h">Ayuda</p>
+        <ul class="op-foot__list"><li><a href="#">Envíos</a></li><li><a href="#">Devoluciones</a></li><li><a href="#">Contacto</a></li></ul>
+      </div>
+      <div>
+        <p class="op-foot__h">Legal</p>
+        <ul class="op-foot__list"><li><a href="#">Términos</a></li><li><a href="#">Privacidad</a></li></ul>
+      </div>
+      <div>
+        <p class="op-foot__h">Novedades, sin ruido</p>
+        <p class="op-p" style="color:rgba(250,248,245,.6)">Un correo al mes como mucho.</p>
+      </div>
+    </div>
+    <p class="op-foot__disc">Este producto es un dispositivo de bienestar y cuidado personal. No es un producto sanitario y no está destinado a diagnosticar, tratar, curar ni prevenir ninguna enfermedad. Los resultados varían según la persona. Consulta a un profesional de la salud si tienes una afección ocular o cutánea.</p>
+    <div class="op-foot__bottom">
+      <span>© 2026 Nocelle. Todos los derechos reservados.</span>
+      <span>TBD · Panamá</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
