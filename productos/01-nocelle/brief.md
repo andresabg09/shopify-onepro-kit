@@ -49,8 +49,15 @@
 - **Qué objeción le frena a comprar:** `TBD confirmar` — propuesta: duda de
   que un aparato de $60 rinda más que uno de $8; miedo a que sea "otro
   gadget que junta polvo en el cajón"
-- **Dónde está:** `TBD confirmar` — propuesta: Instagram/TikTok, contenido
-  de rutina nocturna de skincare
+- **Dónde está:** Panamá (zonas de alto poder adquisitivo: Versalles, Costa
+  del Este) y Estados Unidos. Consumo de contenido: Instagram/TikTok,
+  rutina nocturna de skincare.
+- **Nota de mercado:** Panamá usa USD — mismo precio ($59.99) sirve para
+  ambos mercados sin conversión.
+- **⚠️ Pendiente verificar:** el envío de AutoDS (10 días, gratis) está
+  calculado para EE.UU. Confirmar tiempo/costo real a Panamá antes de
+  lanzar ads ahí — si difiere, hay que ajustar el FAQ y la barra de
+  anuncio.
 
 > Lo marcado `TBD confirmar` es mi mejor propuesta a partir de lo que ya
 > dijiste, no un dato tuyo. Ajústalo si no encaja.

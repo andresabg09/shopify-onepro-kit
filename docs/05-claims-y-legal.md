@@ -48,8 +48,18 @@ contractual).
 
 ## Testimonios y prueba social
 
-- Solo testimonios **reales**. Si no hay ninguno aún, ocultar la sección — no
-  rellenar con nombres inventados.
+Hay dos caminos distintos — no confundirlos:
+
+| Camino | Qué es | ¿Válido? |
+|---|---|---|
+| App de importación de reseñas (AutoDS, Loox, etc.) | Reseñas reales de compradores del listado de origen, con foto/fecha, instalada como su propia app en Shopify | ✅ Práctica estándar de la industria |
+| Testimonios escritos a mano en el bloque `02-template.liquid` (`REV_ES`/`REV_EN`) | Texto redactado por nosotros, sin comprador real detrás | ❌ Nunca — es prueba social inventada |
+
+- El bloque de testimonios de este repo (`SHOW_REVIEWS`) es **texto escrito a
+  mano** — se mantiene en `false` hasta tener citas reales de clientas de
+  *esta* tienda.
+- Una app de reseñas importadas es una sección aparte del tema, no pasa por
+  nuestro Liquid — puede convivir sin problema con los 3 bloques.
 - No usar fotos de stock presentadas como "clientes reales".
 - No usar batas blancas, logos de hospitales, o cualquier elemento que
   sugiera aval médico sin que exista.
