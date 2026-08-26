@@ -12,7 +12,7 @@
 | Marca | **Nocelle** |
 | Subdominio | `nocelle.automatepty.com` |
 | Slug interno | `01-nocelle` |
-| Handle en Shopify | `TBD` — se define al crear el producto en Shopify |
+| Handle en Shopify | `nocelle` (confirmado 2026-08-26) |
 | Fecha de lanzamiento | `TBD` |
 | Plazo de prueba | `TBD` — pendiente definir presupuesto de ads y días de prueba |
 | Criterio de muerte | `TBD` — pendiente definir con Andrés (ver Fase 0 del flujo) |
