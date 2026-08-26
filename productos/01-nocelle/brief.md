@@ -117,12 +117,33 @@ plantilla — ver Sección 4.
 
 ## 7. Diseño
 
+**Cambio de dirección (2026-08-26):** se reemplazó la paleta ciruela/Fraunces
+inicial por el sistema **"Lavender Minimalist E-Commerce"** del `design.md`
+propio del usuario — Modo Vidrio (glassmorphism), ver
+`docs/03-sistema-de-diseno.md` sección "Mecánica vs. piel".
+
 | Token | Valor | Nota |
 |---|---|---|
-| `--op-accent` | `#4A3B47` | Ciruela apagado — conecta con "noche/descanso" sin lila genérico de belleza |
-| `--op-accent-ink` | `#FFFFFF` | |
-| Fuente titular | Fraunces (por defecto del sistema) | |
-| Fuente cuerpo | Inter (por defecto del sistema) | |
+| `--op-primary` | `#635979` | Uso: eyebrow container (con `on-primary-container`) |
+| `--op-primary-container` | `#D1C4E9` | Lavanda suave — barra de anuncio, botón secundario, chips |
+| `--op-on-primary-container` | `#5A506F` | Texto sobre lavanda suave |
+| `--op-secondary` | `#6C45C0` | Morado intenso — CTA primario, precio, iconos clave |
+| `--op-on-secondary` | `#FFFFFF` | Texto sobre CTA |
+| `--op-secondary-container` | `#A67FFD` | Chip de descuento (badge -33%) |
+| `--op-on-secondary-container` | `#3A008B` | Texto sobre chip de descuento |
+| Fuente titular | Montserrat 600/700 | Reemplaza a Fraunces |
+| Fuente cuerpo | Inter | Sin cambio |
+| Radios | 8px botones · 16px tarjetas · full chips | Antes: casi rectos |
+| Elevación | Glassmorphism — tarjetas translúcidas + `backdrop-filter: blur()` + sombra teñida de `--op-secondary` | Antes: cero sombras |
+
+**Nota técnica:** el efecto vidrio necesita manchas de color de fondo
+(`.op-blob`, en `01-header.liquid`) para notarse — sin eso el blur no tiene
+nada que desenfocar. Son `position:fixed`, inyectadas una sola vez desde el
+bloque de Encabezado.
+
+**Inconsistencia detectada en el design.md del usuario:** el texto en prosa
+menciona `#5E35B1` para los CTA, pero ese valor no existe en la tabla de
+tokens (ahí el secundario es `#6C45C0`). Se usó la tabla como fuente oficial.
 
 ## 8. Legal y claims
 

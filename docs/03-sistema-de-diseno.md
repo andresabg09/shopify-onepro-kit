@@ -4,6 +4,34 @@ Los principios que hacen que cualquier producto se vea "sumamente
 profesional, minimalista, elegante y refinado" sin depender del producto en sí.
 Si algo no está aquí, no se improvisa — se decide y se añade a este documento.
 
+## Mecánica vs. piel
+
+Dos capas distintas, no se confunden:
+
+- **Mecánica (reutilizable, igual para todo producto):** la escala de
+  espaciado, cómo se construyen las tarjetas, el patrón de tarjeta con
+  efecto vidrio (glassmorphism), la escala de radios de esquina, cómo se
+  combinan un acento primario y uno secundario. Esto vive en `plantillas/`
+  y no se reinventa por producto.
+- **Piel (específica de cada producto):** los colores exactos, la pareja
+  tipográfica, si se usa el modo plano o el modo vidrio. Esto se decide en
+  el `brief.md` de cada producto y puede ser completamente distinta entre
+  un producto y el siguiente — un producto de skincare nocturno no tiene
+  por qué verse igual que uno deportivo o uno técnico.
+
+### Modo Plano (por defecto original)
+Un solo acento, bordes casi rectos, cero sombras. Ver Sección "Tokens"
+más abajo. Sigue siendo la base neutra de `plantillas/`.
+
+### Modo Vidrio (glassmorphism) — disponible como variante
+Tarjetas translúcidas con `backdrop-filter: blur()`, sombras suaves
+teñidas del color de acento, esquinas más redondeadas (8-16px), dos tonos
+de acento (uno suave para fondos/chips, uno intenso para CTAs). Necesita
+manchas de color de fondo (radial-gradient difuminado) para que el
+desenfoque tenga algo que atravesar — sin eso no se nota el efecto.
+Usado por primera vez en **Nocelle** (paleta lavanda, ver su `brief.md`).
+Para el siguiente producto: mismo mecanismo, colores nuevos a definir.
+
 ---
 
 ## Filosofía

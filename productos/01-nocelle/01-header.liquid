@@ -3,6 +3,9 @@
   BLOQUE 1 / 3  ·  ENCABEZADO
   Pegar en: Editor de temas → Encabezado → Añadir sección → Custom Liquid
   PEGAR ESTE PRIMERO. Define los tokens que usan los otros dos bloques.
+
+  Sistema de diseño: MODO VIDRIO (glassmorphism) — ver docs/03, sección
+  "Mecánica vs. piel". Paleta lavanda tomada del design.md del usuario.
 ================================================================
 {%- endcomment -%}
 
@@ -26,17 +29,27 @@
 {%- assign BAR_3_EN = 'CE certified · Verified quality' -%}
 
 {%- comment -%}
-  Paleta. Un solo acento por tienda. Ciruela apagado — conecta con el
-  concepto "noche/descanso" del nombre Nocelle sin caer en el lila
-  genérico de belleza. Ver decisión en brief.md.
+  Paleta lavanda (design.md del usuario, tabla de tokens como fuente
+  oficial — hay una frase suelta en el documento que menciona #5E35B1
+  para el CTA, pero ese valor no aparece en la tabla; se usa el
+  secundario de la tabla, #6C45C0, visualmente casi idéntico).
 {%- endcomment -%}
-{%- assign ACCENT     = '#4A3B47' -%}
-{%- assign ACCENT_INK = '#FFFFFF' -%}
-{%- assign INK        = '#14100E' -%}
-{%- assign PAPER      = '#FAF8F5' -%}
+{%- assign PRIMARY               = '#635979' -%}
+{%- assign PRIMARY_CONTAINER     = '#D1C4E9' -%}
+{%- assign ON_PRIMARY_CONTAINER  = '#5A506F' -%}
+{%- assign SECONDARY             = '#6C45C0' -%}
+{%- assign ON_SECONDARY          = '#FFFFFF' -%}
+{%- assign SECONDARY_CONTAINER   = '#A67FFD' -%}
+{%- assign ON_SECONDARY_CONTAINER = '#3A008B' -%}
+{%- assign INK                   = '#1A1C1C' -%}
+{%- assign BG                    = '#F9F9F9' -%}
+{%- assign MUTED                 = '#49454D' -%}
+{%- assign OUTLINE_VARIANT       = '#CAC4CD' -%}
+{%- assign INVERSE_SURFACE       = '#2F3131' -%}
+{%- assign INVERSE_INK           = '#F0F1F1' -%}
 
 {%- comment -%} Tipografía (Google Fonts) {%- endcomment -%}
-{%- assign FONT_DISPLAY = 'Fraunces' -%}
+{%- assign FONT_DISPLAY = 'Montserrat' -%}
 {%- assign FONT_BODY    = 'Inter' -%}
 
 {%- comment -%} ══════════ NO EDITAR DEBAJO ══════════ {%- endcomment -%}
@@ -51,42 +64,56 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family={{ FONT_DISPLAY }}:opsz,wght@9..144,300..700&family={{ FONT_BODY }}:wght@300..600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family={{ FONT_DISPLAY }}:wght@500;600;700&family={{ FONT_BODY }}:wght@400;500;600&display=swap">
 
 <style>
 :root{
   --op-ink:{{ INK }};
-  --op-paper:{{ PAPER }};
-  --op-surface:#FFFFFF;
-  --op-muted:#6B635C;
-  --op-line:#E7E1D9;
-  --op-accent:{{ ACCENT }};
-  --op-accent-ink:{{ ACCENT_INK }};
-  --op-accent-wash:color-mix(in srgb, {{ ACCENT }} 7%, {{ PAPER }});
+  --op-bg:{{ BG }};
+  --op-muted:{{ MUTED }};
+  --op-outline-variant:{{ OUTLINE_VARIANT }};
+  --op-inverse-surface:{{ INVERSE_SURFACE }};
+  --op-inverse-ink:{{ INVERSE_INK }};
 
-  --op-font-display:'{{ FONT_DISPLAY }}', 'Iowan Old Style', Georgia, serif;
+  --op-primary:{{ PRIMARY }};
+  --op-primary-container:{{ PRIMARY_CONTAINER }};
+  --op-on-primary-container:{{ ON_PRIMARY_CONTAINER }};
+  --op-secondary:{{ SECONDARY }};
+  --op-on-secondary:{{ ON_SECONDARY }};
+  --op-secondary-container:{{ SECONDARY_CONTAINER }};
+  --op-on-secondary-container:{{ ON_SECONDARY_CONTAINER }};
+
+  --op-font-display:'{{ FONT_DISPLAY }}', 'Helvetica Neue', Arial, sans-serif;
   --op-font-body:'{{ FONT_BODY }}', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
   /* Escala tipográfica fluida */
-  --op-t-xs:0.75rem;
+  --op-t-label:0.75rem;
   --op-t-sm:0.875rem;
-  --op-t-base:clamp(1rem, 0.97rem + 0.15vw, 1.0625rem);
-  --op-t-lg:clamp(1.125rem, 1.05rem + 0.35vw, 1.3125rem);
-  --op-t-xl:clamp(1.5rem, 1.3rem + 1vw, 2rem);
-  --op-t-2xl:clamp(2rem, 1.6rem + 2vw, 3rem);
-  --op-t-3xl:clamp(2.5rem, 1.9rem + 3vw, 4.25rem);
+  --op-t-body:1rem;
+  --op-t-lead:clamp(1.0625rem, 1rem + 0.3vw, 1.125rem);
+  --op-t-h3:clamp(1.25rem, 1.15rem + 0.4vw, 1.5rem);
+  --op-t-h2:clamp(1.75rem, 1.45rem + 1.4vw, 2rem);
+  --op-t-h1:clamp(2.25rem, 1.6rem + 3vw, 3rem);
 
-  /* Ritmo vertical: escala de 4px */
-  --op-s-1:0.25rem;  --op-s-2:0.5rem;   --op-s-3:0.75rem;
-  --op-s-4:1rem;     --op-s-6:1.5rem;   --op-s-8:2rem;
-  --op-s-12:3rem;    --op-s-16:4rem;    --op-s-24:6rem;
-  --op-section:clamp(3.5rem, 2rem + 6vw, 7rem);
+  /* Ritmo vertical (design.md: stack-sm/md/lg + section-gap) */
+  --op-gutter:24px;
+  --op-margin-desktop:64px;
+  --op-margin-mobile:20px;
+  --op-section-gap:80px;
+  --op-stack-sm:8px;
+  --op-stack-md:16px;
+  --op-stack-lg:32px;
 
-  --op-max:1180px;
-  --op-max-text:62ch;
-  --op-radius:2px;
-  --op-radius-lg:4px;
+  /* Radios (design.md: rounded scale) */
+  --op-r-sm:0.25rem;
+  --op-r-md:0.5rem;
+  --op-r-lg:1rem;
+  --op-r-xl:1.5rem;
+  --op-r-full:9999px;
+
+  --op-max:1200px;
   --op-ease:cubic-bezier(.2,.7,.3,1);
+  --op-shadow-ambient:0 24px 48px -12px rgba(108,69,192,.16), 0 4px 12px -4px rgba(108,69,192,.08);
 }
 
 /* Base */
@@ -96,27 +123,34 @@
   -webkit-font-smoothing:antialiased;
   text-rendering:optimizeLegibility;
 }
-body{ background:var(--op-paper); }
+body{ background:var(--op-bg); }
 
-.op-wrap{ width:100%; max-width:var(--op-max); margin-inline:auto; padding-inline:clamp(1.25rem,5vw,2.5rem); }
+.op-wrap{ position:relative; z-index:1; width:100%; max-width:var(--op-max); margin-inline:auto; padding-inline:clamp(var(--op-margin-mobile), 5vw, var(--op-margin-desktop)); }
+
+/* ── Manchas decorativas lavanda: sin esto el glassmorphism no se nota ── */
+.op-blob{ position:fixed; z-index:0; border-radius:50%; filter:blur(60px); pointer-events:none; }
+.op-blob--1{ width:34rem; height:34rem; top:-12rem; right:-10rem; background:radial-gradient(circle, rgba(166,127,253,.30), rgba(209,196,233,0) 70%); }
+.op-blob--2{ width:28rem; height:28rem; top:50vh; left:-12rem; background:radial-gradient(circle, rgba(209,196,233,.45), rgba(209,196,233,0) 70%); }
+.op-blob--3{ width:30rem; height:30rem; bottom:0; right:-8rem; background:radial-gradient(circle, rgba(108,69,192,.14), rgba(108,69,192,0) 70%); }
 
 /* ── Barra de anuncio ─────────────────────────────── */
 .op-bar{
-  background:var(--op-ink); color:var(--op-paper);
-  font-size:var(--op-t-xs); letter-spacing:.09em; text-transform:uppercase;
-  font-weight:500;
+  position:relative; z-index:1;
+  background:var(--op-primary-container); color:var(--op-on-primary-container);
+  font-size:var(--op-t-label); letter-spacing:.05em; text-transform:uppercase;
+  font-weight:600;
 }
-.op-bar__viewport{ height:2.5rem; overflow:hidden; position:relative; }
+.op-bar__viewport{ height:2.75rem; overflow:hidden; position:relative; }
 .op-bar__track{ position:absolute; inset:0; animation:op-bar-cycle 15s infinite; }
 .op-bar__item{
-  height:2.5rem; display:flex; align-items:center; justify-content:center;
+  height:2.75rem; display:flex; align-items:center; justify-content:center;
   text-align:center; padding-inline:1rem;
 }
 @keyframes op-bar-cycle{
   0%,28%   { transform:translateY(0); }
-  33%,61%  { transform:translateY(-2.5rem); }
-  66%,94%  { transform:translateY(-5rem); }
-  100%     { transform:translateY(-7.5rem); }
+  33%,61%  { transform:translateY(-2.75rem); }
+  66%,94%  { transform:translateY(-5.5rem); }
+  100%     { transform:translateY(-8.25rem); }
 }
 @media (prefers-reduced-motion:reduce){
   .op-bar__track{ animation:none; }
@@ -126,31 +160,34 @@ body{ background:var(--op-paper); }
 /* No se reemplaza: el carrito y el menú del tema deben seguir vivos. */
 .shopify-section-group-header-group,
 .section-header, #shopify-section-header{
-  background:var(--op-paper) !important;
-  border-bottom:1px solid var(--op-line);
+  background:var(--op-bg) !important;
+  border-bottom:1px solid var(--op-outline-variant);
 }
 .shopify-section-group-header-group .header__heading-link,
 .shopify-section-group-header-group .header__heading,
 .header__heading-link{
   font-family:var(--op-font-display) !important;
-  font-weight:400 !important;
-  letter-spacing:.02em;
+  font-weight:700 !important;
+  letter-spacing:-.01em;
   text-transform:none !important;
 }
 .shopify-section-group-header-group .header__menu-item,
 .shopify-section-group-header-group .list-menu__item{
   font-family:var(--op-font-body) !important;
   font-size:var(--op-t-sm) !important;
-  letter-spacing:.06em; text-transform:uppercase;
-  font-weight:500; color:var(--op-ink) !important;
+  font-weight:500; color:var(--op-muted) !important;
 }
-.shopify-section-group-header-group .header__menu-item:hover{ color:var(--op-accent) !important; }
+.shopify-section-group-header-group .header__menu-item:hover{ color:var(--op-secondary) !important; }
 
 /* Silencia decoraciones del tema que rompen el aire */
 .shopify-section-group-header-group .header__icon--cart .cart-count-bubble{
-  background:var(--op-accent) !important; color:var(--op-accent-ink) !important;
+  background:var(--op-secondary) !important; color:var(--op-on-secondary) !important;
 }
 </style>
+
+<div class="op-blob op-blob--1"></div>
+<div class="op-blob op-blob--2"></div>
+<div class="op-blob op-blob--3"></div>
 
 <div class="op-bar" role="region" aria-label="{{ TAGLINE }}">
   <div class="op-bar__viewport">
