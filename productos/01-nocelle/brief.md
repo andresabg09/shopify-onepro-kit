@@ -63,7 +63,8 @@ roja) y a la garantía real de 30 días — nunca a "resultado garantizado".
 
 ## 4. Posicionamiento
 
-- **Promesa central:** `TBD` — dos direcciones a elegir, ver conversación
+- **Promesa central:** "Una mirada descansada, aunque la noche no haya
+  ayudado" — enfoque en apariencia/resultado visible, sin claim médico
 - **Mecanismo:** Microcorriente (EMS) + luz roja LED en la zona del
   contorno de ojos, como parte del ritual nocturno de skincare
 - **Diferenciador vs. la alternativa barata:** 3 niveles de intensidad
@@ -76,7 +77,24 @@ roja) y a la garantía real de 30 días — nunca a "resultado garantizado".
 
 ## 5. Copy — bloques clave
 
-`TBD` — se completa después de definir Secciones 3 y 4.
+**Ya escrito** en `02-header.liquid`/`02-template.liquid` de esta carpeta.
+Resumen (ver el `.liquid` para la versión bilingüe completa):
+
+| Elemento | ES |
+|---|---|
+| Eyebrow | Ritual de 15 minutos |
+| H1 | Una mirada descansada, aunque la noche no haya ayudado |
+| Subtítulo | Microcorriente y luz roja en tu rutina de siempre, antes de dormir |
+| CTA | Empezar mi ritual |
+| Micro-confianza | Envío gratis · Garantía de 30 días · Certificado CE |
+
+**Pendiente (necesita un número real, no se inventa):** el ángulo de
+"recuperas tu dinero" que propusiste — falta comparar contra el gasto
+mensual real en corrector/parches para ojeras. Se añade cuando tengamos
+ese dato.
+
+**Testimonios:** vacíos a propósito. `SHOW_REVIEWS = false` en el bloque de
+plantilla — ver Sección 4.
 
 ## 6. Recursos visuales
 
@@ -94,8 +112,8 @@ roja) y a la garantía real de 30 días — nunca a "resultado garantizado".
 
 | Token | Valor | Nota |
 |---|---|---|
-| `--op-accent` | `TBD` | Pendiente — se decide con el posicionamiento (Sección 4) |
-| `--op-accent-ink` | `TBD` | |
+| `--op-accent` | `#4A3B47` | Ciruela apagado — conecta con "noche/descanso" sin lila genérico de belleza |
+| `--op-accent-ink` | `#FFFFFF` | |
 | Fuente titular | Fraunces (por defecto del sistema) | |
 | Fuente cuerpo | Inter (por defecto del sistema) | |
 

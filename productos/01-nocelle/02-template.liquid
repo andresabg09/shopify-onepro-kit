@@ -17,61 +17,66 @@
 {%- comment -%} ========== ZONA EDITABLE ========== {%- endcomment -%}
 
 {%- assign LANG = 'es' -%}
-{%- assign PRODUCT_HANDLE = 'handle-del-producto' -%}
+{%- comment -%}
+  PRODUCT_HANDLE es una PROPUESTA — debe confirmarse contra el handle real
+  una vez el producto esté importado en Shopify (Fase 2 del flujo). Ver
+  brief.md, checklist de lanzamiento.
+{%- endcomment -%}
+{%- assign PRODUCT_HANDLE = 'nocelle-masajeador-de-ojos' -%}
 
 {%- comment -%} -- HERO -- {%- endcomment -%}
-{%- assign EYEBROW_ES = 'Diseñado para el descanso' -%}
-{%- assign EYEBROW_EN = 'Designed for rest' -%}
-{%- assign H1_ES = 'El titular que promete el resultado, no el producto' -%}
-{%- assign H1_EN = 'The headline that promises the result, not the product' -%}
-{%- assign SUB_ES = 'Una frase que explica el mecanismo concreto y elimina la duda principal.' -%}
-{%- assign SUB_EN = 'One line that explains the actual mechanism and removes the main doubt.' -%}
-{%- assign CTA_ES = 'Añadir al carrito' -%}
-{%- assign CTA_EN = 'Add to cart' -%}
-{%- assign MICRO_ES = 'Envío gratis · 30 días de garantía · Stock limitado' -%}
-{%- assign MICRO_EN = 'Free shipping · 30-day guarantee · Limited stock' -%}
+{%- assign EYEBROW_ES = 'Ritual de 15 minutos' -%}
+{%- assign EYEBROW_EN = '15-minute ritual' -%}
+{%- assign H1_ES = 'Una mirada descansada, aunque la noche no haya ayudado' -%}
+{%- assign H1_EN = 'A rested look, even when sleep didn’t help' -%}
+{%- assign SUB_ES = 'Microcorriente y luz roja en tu rutina de siempre, antes de dormir.' -%}
+{%- assign SUB_EN = 'Microcurrent and red light, right in your nightly routine.' -%}
+{%- assign CTA_ES = 'Empezar mi ritual' -%}
+{%- assign CTA_EN = 'Start my ritual' -%}
+{%- assign MICRO_ES = 'Envío gratis · Garantía de 30 días · Certificado CE' -%}
+{%- assign MICRO_EN = 'Free shipping · 30-day guarantee · CE certified' -%}
 
 {%- comment -%} -- TIRA DE CONFIANZA (4) -- {%- endcomment -%}
-{%- assign TRUST_ES = 'Envío gratis|Garantía 30 días|Pago seguro|Soporte real' -%}
-{%- assign TRUST_EN = 'Free shipping|30-day guarantee|Secure checkout|Real support' -%}
+{%- assign TRUST_ES = 'Envío gratis|Garantía 30 días|Pago seguro|Certificado CE' -%}
+{%- assign TRUST_EN = 'Free shipping|30-day guarantee|Secure checkout|CE certified' -%}
 
 {%- comment -%} -- PROBLEMA (3 dolores) -- {%- endcomment -%}
 {%- assign PROB_TITLE_ES = '¿Te reconoces en esto?' -%}
 {%- assign PROB_TITLE_EN = 'Sound familiar?' -%}
-{%- assign PROB_ES = 'Primer dolor concreto del cliente|Segundo dolor, en sus propias palabras|Tercer dolor: lo que ya intentó y no funcionó' -%}
-{%- assign PROB_EN = 'First concrete pain point|Second pain, in their own words|Third: what they already tried that failed' -%}
+{%- assign PROB_ES = 'Te miras al espejo y las ojeras dicen que dormiste mal, aunque hayas dormido bien|Después de horas de pantalla, sientes los ojos hinchados y cansados|El corrector las tapa un rato, pero vuelven apenas te lo quitas' -%}
+{%- assign PROB_EN = 'You look in the mirror and your under-eyes say you slept badly, even when you didn’t|After hours of screen time, your eyes feel puffy and tired|Concealer hides it for a while, but it’s back the moment you take it off' -%}
 
 {%- comment -%} -- CÓMO FUNCIONA (3 pasos) -- {%- endcomment -%}
 {%- assign HOW_TITLE_ES = 'Cómo funciona' -%}
 {%- assign HOW_TITLE_EN = 'How it works' -%}
-{%- assign HOW_ES = 'Paso uno::Qué hace el usuario, en una frase.|Paso dos::El mecanismo real que produce el resultado.|Paso tres::Qué nota y en cuánto tiempo.' -%}
-{%- assign HOW_EN = 'Step one::What the user does, in one line.|Step two::The real mechanism behind the result.|Step three::What they notice, and when.' -%}
+{%- assign HOW_ES = 'Colócatelo::Se ajusta como unos lentes, sin apretar, sobre el contorno de ojos.|Actívalo::Microcorriente (EMS) y luz roja trabajan la zona durante la sesión.|Sigue tu rutina::15 minutos con temporizador automático — se apaga solo.' -%}
+{%- assign HOW_EN = 'Put it on::It fits like glasses, snug but gentle, right over the eye area.|Turn it on::Microcurrent (EMS) and red light work the area during the session.|Go about your routine::15 minutes on an automatic timer — it turns off by itself.' -%}
 
 {%- comment -%} -- BENEFICIOS (4) -- {%- endcomment -%}
 {%- assign BEN_TITLE_ES = 'Por qué es distinto' -%}
 {%- assign BEN_TITLE_EN = 'Why it is different' -%}
-{%- assign BEN_ES = 'Beneficio uno::Línea de apoyo que lo justifica.|Beneficio dos::Línea de apoyo que lo justifica.|Beneficio tres::Línea de apoyo que lo justifica.|Beneficio cuatro::Línea de apoyo que lo justifica.' -%}
-{%- assign BEN_EN = 'Benefit one::Supporting line that backs it up.|Benefit two::Supporting line that backs it up.|Benefit three::Supporting line that backs it up.|Benefit four::Supporting line that backs it up.' -%}
+{%- assign BEN_ES = 'Se ajusta a ti::3 niveles de intensidad, según tu sensibilidad.|Carga rápida::30 minutos de carga, 90 minutos de uso.|Manos libres::Diseño tipo lentes — sigue tu rutina mientras se usa.|Calidad certificada::Certificación CE, no un gadget improvisado.' -%}
+{%- assign BEN_EN = 'Adjusts to you::3 intensity levels, matched to your sensitivity.|Fast charging::30 minutes to charge, 90 minutes of use.|Hands-free::Glasses-style design — keep going with your routine while it works.|Certified quality::CE certified, not a random gadget.' -%}
 
 {%- comment -%} -- ESPECIFICACIONES -- {%- endcomment -%}
 {%- assign SPEC_TITLE_ES = 'Especificaciones' -%}
 {%- assign SPEC_TITLE_EN = 'Specifications' -%}
-{%- assign SPECS = 'Material::-|Dimensiones::-|Peso::-|Batería::-|Incluye::-|Garantía::30 días' -%}
+{%- assign SPECS = 'Material::ABS + silicona|Dimensiones::14 × 15 cm|Peso::38 g|Batería::90 mAh (30 min carga / 90 min uso)|Incluye::Cable USB-C, manual, caja|Garantía::30 días' -%}
 
 {%- comment -%} -- COMPARATIVA (1 = sí, 0 = no) -- {%- endcomment -%}
-{%- assign CMP_TITLE_ES = 'Comparado con la alternativa' -%}
-{%- assign CMP_TITLE_EN = 'Compared to the alternative' -%}
-{%- assign CMP_US_ES = 'Nosotros' -%}
-{%- assign CMP_US_EN = 'Us' -%}
-{%- assign CMP_THEM_ES = 'Alternativa genérica' -%}
-{%- assign CMP_THEM_EN = 'Generic alternative' -%}
-{%- assign CMP_ROWS = 'Criterio uno::1::0|Criterio dos::1::0|Criterio tres::1::1|Criterio cuatro::1::0' -%}
+{%- assign CMP_TITLE_ES = 'Comparado con la alternativa de $8' -%}
+{%- assign CMP_TITLE_EN = 'Compared to the $8 alternative' -%}
+{%- assign CMP_US_ES = 'Nocelle' -%}
+{%- assign CMP_US_EN = 'Nocelle' -%}
+{%- assign CMP_THEM_ES = 'Genérico de $8' -%}
+{%- assign CMP_THEM_EN = 'Generic $8 version' -%}
+{%- assign CMP_ROWS = '3 niveles de intensidad ajustables::1::0|Certificación CE::1::0|Garantía de 30 días::1::0|Carga por USB-C::1::1' -%}
 
-{%- comment -%} -- TESTIMONIOS -- {%- endcomment -%}
+{%- comment -%} -- TESTIMONIOS (ocultos, ver interruptor SHOW_REVIEWS abajo) -- {%- endcomment -%}
 {%- assign REV_TITLE_ES = 'Lo que dicen' -%}
 {%- assign REV_TITLE_EN = 'What people say' -%}
-{%- assign REV_ES = 'Nombre A::Texto del testimonio, concreto y creíble.|Nombre B::Texto del testimonio, concreto y creíble.|Nombre C::Texto del testimonio, concreto y creíble.' -%}
-{%- assign REV_EN = 'Name A::Concrete, believable testimonial text.|Name B::Concrete, believable testimonial text.|Name C::Concrete, believable testimonial text.' -%}
+{%- assign REV_ES = '' -%}
+{%- assign REV_EN = '' -%}
 
 {%- comment -%} -- GARANTÍA -- {%- endcomment -%}
 {%- assign GUA_TITLE_ES = '30 días para probarlo' -%}
@@ -82,12 +87,21 @@
 {%- comment -%} -- FAQ -- {%- endcomment -%}
 {%- assign FAQ_TITLE_ES = 'Preguntas frecuentes' -%}
 {%- assign FAQ_TITLE_EN = 'Frequently asked questions' -%}
-{%- assign FAQ_ES = '¿Cuánto tarda el envío?::Entre X y Y días hábiles. Recibes seguimiento por email.|¿Y si no me funciona?::Tienes 30 días para devolverlo con reembolso completo.|¿Es seguro?::Sí — explicar por qué, con el dato concreto.|¿Cómo se usa?::En una frase, sin tecnicismos.|¿Necesita mantenimiento?::Respuesta breve y honesta.|¿Tiene garantía?::Sí, 30 días desde la entrega.' -%}
-{%- assign FAQ_EN = 'How long is shipping?::Between X and Y business days, with email tracking.|What if it does not work for me?::You have 30 days for a full refund.|Is it safe?::Yes — explain why, with the concrete fact.|How do I use it?::In one line, no jargon.|Does it need maintenance?::Short, honest answer.|Is there a warranty?::Yes, 30 days from delivery.' -%}
+{%- assign FAQ_ES = '¿Cuánto tarda el envío?::Alrededor de 10 días hábiles, con seguimiento por email.|¿Y si no me funciona?::Tienes 30 días para devolverlo con reembolso completo.|¿Es seguro para el contorno de ojos?::Sí. Usa microcorriente de bajo voltaje (3.7V) y luz LED, con certificación CE. Evita el contacto directo con el ojo.|¿Cómo se usa?::Colócatelo como unos lentes, elige la intensidad y déjalo actuar 15 minutos — se apaga solo.|¿Necesita mantenimiento?::No. Solo cárgalo por USB-C cuando lo necesites.|¿Tiene garantía?::Sí, 30 días desde la entrega.' -%}
+{%- assign FAQ_EN = 'How long is shipping?::About 10 business days, with email tracking.|What if it does not work for me?::You have 30 days for a full refund.|Is it safe for the eye area?::Yes. It uses low-voltage microcurrent (3.7V) and LED light, CE certified. Avoid direct contact with the eye itself.|How do I use it?::Put it on like glasses, pick your intensity, and let it work for 15 minutes — it turns off by itself.|Does it need maintenance?::No. Just charge it over USB-C when needed.|Is there a warranty?::Yes, 30 days from delivery.' -%}
 
 {%- comment -%} -- CTA FINAL -- {%- endcomment -%}
 {%- assign FIN_TITLE_ES = 'Empieza esta noche' -%}
 {%- assign FIN_TITLE_EN = 'Start tonight' -%}
+
+{%- comment -%}
+  -- TESTIMONIOS: mostrar u ocultar --
+  Nocelle es una tienda nueva: CERO reseñas reales todavía. Las 4.9★ del
+  listado de AliExpress son de OTRA tienda — no son nuestras y no se usan.
+  Cambiar a `true` solo cuando existan testimonios reales que citar en
+  REV_ES / REV_EN arriba.
+{%- endcomment -%}
+{%- assign SHOW_REVIEWS = false -%}
 
 {%- comment -%} ========== NO EDITAR DEBAJO ========== {%- endcomment -%}
 
@@ -440,7 +454,8 @@
     </div>
   </section>
 
-  <!-- ============ TESTIMONIOS ============ -->
+  <!-- ============ TESTIMONIOS (solo si SHOW_REVIEWS = true) ============ -->
+  {%- if SHOW_REVIEWS -%}
   <section class="op-sec op-sec--wash">
     <div class="op-wrap">
       <div class="op-head"><h2 class="op-h2">{{ REV_TITLE }}</h2></div>
@@ -456,6 +471,7 @@
       </div>
     </div>
   </section>
+  {%- endif -%}
 
   <!-- ============ GARANTÍA ============ -->
   <section class="op-sec op-sec--tight op-wrap">

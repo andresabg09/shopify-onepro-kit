@@ -89,6 +89,15 @@
 {%- assign FIN_TITLE_ES = 'Empieza esta noche' -%}
 {%- assign FIN_TITLE_EN = 'Start tonight' -%}
 
+{%- comment -%}
+  -- TESTIMONIOS: mostrar u ocultar --
+  Una tienda nueva empieza con CERO reseñas reales. Poner testimonios
+  inventados (o importar las reseñas del listado del proveedor, que son de
+  OTRA tienda) rompe la regla de docs/05-claims-y-legal.md y puede tumbar
+  la cuenta de ads. Dejar en `false` hasta tener clientas reales que citar.
+{%- endcomment -%}
+{%- assign SHOW_REVIEWS = false -%}
+
 {%- comment -%} ========== NO EDITAR DEBAJO ========== {%- endcomment -%}
 
 {%- if product != blank and product.id -%}
@@ -440,7 +449,8 @@
     </div>
   </section>
 
-  <!-- ============ TESTIMONIOS ============ -->
+  <!-- ============ TESTIMONIOS (solo si SHOW_REVIEWS = true) ============ -->
+  {%- if SHOW_REVIEWS -%}
   <section class="op-sec op-sec--wash">
     <div class="op-wrap">
       <div class="op-head"><h2 class="op-h2">{{ REV_TITLE }}</h2></div>
@@ -456,6 +466,7 @@
       </div>
     </div>
   </section>
+  {%- endif -%}
 
   <!-- ============ GARANTÍA ============ -->
   <section class="op-sec op-sec--tight op-wrap">
