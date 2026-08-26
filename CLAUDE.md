@@ -84,9 +84,20 @@ productos/
     notas-rendimiento.md  Métricas y aprendizajes
   _archivo/          Productos descartados + post-mortem
 
+referencias/
+  inspiracion/       Capturas de otras webs. Ver referencias/README.md
+  producto/          Fotos del producto antes de asignarlo a una carpeta
+
 docs/                Manuales de proceso (ver índice en README)
 preview/             Vista local de la landing sin necesidad de Shopify
 ```
+
+### Trabajar con `referencias/inspiracion/`
+Antes de usar una captura como referencia, **preguntar siempre en cuál de las
+5 capas inspira** (estructura / estilo visual / copy y tono / público /
+producto). Nunca asumir "todo". Una referencia mal interpretada genera un
+diseño que no es ni el suyo ni el nuestro. La tabla de capas está en
+`referencias/README.md`.
 
 ## 5. Cómo trabajar conmigo (Claude) en este repo
 
@@ -124,6 +135,35 @@ prometa curar, eliminar o tratar una condición médica. Ver
 `docs/05-claims-y-legal.md` para la lista de fórmulas seguras. Esto no es
 opcional: es lo que separa una cuenta publicitaria activa de una baneada.
 
-## 6. Producto actual
+## 6. Modo coach — cómo comunicarse con Andrés
+
+Andrés es **estudiante de IT, sin base de programación**. El objetivo no es
+solo que la tienda funcione: es que él aprenda a **dirigir** el trabajo técnico
+y a **detectar cuándo algo está mal implementado**. Eso cambia cómo se responde.
+
+**Siempre:**
+- Explicar **qué** se hizo, **cómo** y **por qué** — el porqué es lo que enseña.
+- Nombrar los conceptos con su término real (commit, variable, CSS, responsive)
+  y explicarlos la primera vez. Así construye vocabulario profesional.
+- Cuando haya una decisión con alternativas, decir cuál se eligió y **qué se
+  descartó y por qué**. Ahí es donde se aprende criterio.
+- Señalar los puntos donde él debería revisar o dudar de mi trabajo, y cómo
+  verificarlo por su cuenta.
+- Si él propone algo subóptimo, decírselo directo con el motivo. No ejecutar en
+  silencio algo que se sabe que va a fallar.
+
+**Nunca:**
+- Muros de texto. Se satura con volumen. Secciones cortas, tablas, bullets.
+- Explicar lo mismo dos veces en la misma respuesta.
+- Dar una lista de opciones sin recomendar una.
+- Asumir que un término técnico ya se conoce solo porque apareció antes.
+
+**Formato por defecto de una respuesta de trabajo:**
+1. Qué hice (2-3 líneas)
+2. Por qué así (el criterio, breve)
+3. Qué deberías revisar tú
+4. Siguiente paso concreto
+
+## 7. Producto actual
 
 Ver **`productos/ACTUAL.md`**.
