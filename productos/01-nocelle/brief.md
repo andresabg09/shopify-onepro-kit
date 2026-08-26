@@ -38,22 +38,41 @@
 
 ## 3. Cliente
 
-- **Quién es:** `TBD`
-- **Qué le duele (el problema real, en sus palabras):** `TBD`
-- **Qué ha intentado antes y le falló:** `TBD`
-- **Qué objeción le frena a comprar:** `TBD`
-- **Dónde está:** `TBD`
+- **Quién es:** Mujeres de 22-45 años. Ya tienen rutina de cuidado facial —
+  el producto se integra a algo que ya hacen, no es un hábito nuevo que
+  crear.
+- **Qué le duele (el problema real, en sus palabras):** Ojeras (genéticas o
+  por ritmo de vida agotador) + hinchazón por exceso de pantallas.
+- **Qué ha intentado antes y le falló:** `TBD confirmar` — propuesta:
+  corrector/concealer (tapa, no alivia), cremas de venta libre (resultado
+  lento o nulo)
+- **Qué objeción le frena a comprar:** `TBD confirmar` — propuesta: duda de
+  que un aparato de $60 rinda más que uno de $8; miedo a que sea "otro
+  gadget que junta polvo en el cajón"
+- **Dónde está:** `TBD confirmar` — propuesta: Instagram/TikTok, contenido
+  de rutina nocturna de skincare
 
-> ⚠️ Esta sección no se puede automatizar — es la decisión de Andrés.
-> Sin esto no se escribe el copy (H1, dolores, FAQ). Ver conversación para
-> las 3 preguntas pendientes.
+> Lo marcado `TBD confirmar` es mi mejor propuesta a partir de lo que ya
+> dijiste, no un dato tuyo. Ajústalo si no encaja.
+
+### Nota — deseo del cliente vs. claim permitido
+La clienta busca algo "garantizado y comprobado". Eso es lo que **siente
+que necesita**, no algo que el copy pueda prometer literal (ver
+`docs/05-claims-y-legal.md`). Se traduce a mecanismo concreto (EMS + luz
+roja) y a la garantía real de 30 días — nunca a "resultado garantizado".
 
 ## 4. Posicionamiento
 
-- **Promesa central:** `TBD`
-- **Mecanismo:** `TBD`
-- **Diferenciador vs. la alternativa barata:** `TBD`
-- **Prueba:** `TBD`
+- **Promesa central:** `TBD` — dos direcciones a elegir, ver conversación
+- **Mecanismo:** Microcorriente (EMS) + luz roja LED en la zona del
+  contorno de ojos, como parte del ritual nocturno de skincare
+- **Diferenciador vs. la alternativa barata:** 3 niveles de intensidad
+  ajustables · carga USB-C (30 min → 90 min de uso) · certificación CE ·
+  garantía de 30 días. El de $8 típicamente no trae nada de esto y falla
+  en semanas.
+- **Prueba:** **Ninguna todavía.** Tienda nueva = cero reseñas reales.
+  Sección de testimonios **oculta** en el lanzamiento hasta tener clientas
+  reales (ver checklist más abajo).
 
 ## 5. Copy — bloques clave
 
